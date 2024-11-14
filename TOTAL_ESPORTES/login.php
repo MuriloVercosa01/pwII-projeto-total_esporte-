@@ -33,7 +33,7 @@
 
     </header>
     <main>
-        <form class="cadastro" action="Conexao/login_conexaogpt.php" method="POST" >
+        <form class="cadastro" action="Conexao/login_conexao.php" method="POST" >
             <br>
             <h1 id="titulo">Login</h1>
             <br>

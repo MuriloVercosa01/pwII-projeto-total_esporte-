@@ -17,6 +17,7 @@
             if ($conexao->connect_error){
                 die('a conexão falhou:' . $conexao->connect_error);
             }
+            //inserindo os dados do cadastro no banco de dados
             $sql = "INSERT INTO cadastros (senha,nome,email) VALUES (?,?,?)";
 
             $stmt = $conexao->prepare($sql);
@@ -24,7 +25,20 @@
             $stmt->bind_param("iss",$_senha,$_nome,$_email);
 
             $stmt->execute();
+            //echo ('<h1>funcionou</h1>');
+            echo 
+            ('<script type="text/javascript" >
+                alert("cadastro realizado com sucesso");
 
+                redirecionar("http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/login.php");
+
+                function redirecionar(url){
+                    window.location.href = url;
+                } 
+            </script>');
+            //header("Location:http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/login.php");
+
+            exit();
 
 
         }else{

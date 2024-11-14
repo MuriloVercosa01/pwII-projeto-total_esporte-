@@ -9,13 +9,39 @@
         $_senha = $_POST['senha'];
         $_comSenha = $_POST['csenha'];
 
+        include_once('conexao.php');
 
-        if($_senha == $_comSenha){
-            echo('senha comfirmada');
-            include_once('conexao.php');
+        if ($conexao->connect_error){
+            die('a conexão falhou:' . $conexao->connect_error);
+        }
+        //consultado email cadastrados no banco de dados
+        $sql = "SELECT * FROM cadastros WHERE email = '$_email'";
 
-            if ($conexao->connect_error){
-                die('a conexão falhou:' . $conexao->connect_error);
+        $stmt = $conexao->prepare($sql);
+
+        $stmt->execute();
+
+        $emailsCadastrado = $stmt->get_result();
+        //consultando nomes de usuarios cadastrados
+        $sql = "SELECT * FROM cadastros WHERE nome = '$_nome'";
+
+        $stmt = $conexao->prepare($sql);
+
+        $stmt->execute();
+
+        $nomesCadastrados = $stmt->get_result();
+
+        if($_senha == $_comSenha && mysqli_num_rows($emailsCadastrado) == 0){
+            if(mysqli_num_rows($nomesCadastrados) != 0){
+                echo ('<script>
+                alert("nome de usuario já cadastrado");
+
+                redirecionar("http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/cadastro.php");
+
+                function redirecionar(url){
+                    window.location.href = url;
+                } 
+                </script>');
             }
             //inserindo os dados do cadastro no banco de dados
             $sql = "INSERT INTO cadastros (senha,nome,email) VALUES (?,?,?)";
@@ -27,7 +53,7 @@
             $stmt->execute();
             //echo ('<h1>funcionou</h1>');
             echo 
-            ('<script type="text/javascript" >
+            ('<script>
                 alert("cadastro realizado com sucesso");
 
                 redirecionar("http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/login.php");
@@ -42,7 +68,16 @@
 
 
         }else{
-            echo('senha não confere');
+            echo 
+            ('<script>
+                alert("email já cadastrado ou senha não confere");
+
+                redirecionar("http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/cadastro.php");
+
+                function redirecionar(url){
+                    window.location.href = url;
+                } 
+            </script>');
         }
     }
     else{

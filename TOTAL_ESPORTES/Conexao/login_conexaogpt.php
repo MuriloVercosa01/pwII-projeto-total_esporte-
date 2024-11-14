@@ -38,9 +38,26 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']
 
     // Verificando o número de resultados
     if (mysqli_num_rows($result) < 1) {
-        echo "<br>Não há correspondência.";
+        echo ('<script>
+                alert("dados inválidos");
+
+                redirecionar("http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/login.php");
+
+                function redirecionar(url){
+                    window.location.href = url;
+                } 
+            </script>');
     } else {
-        echo "Há correspondência.";
+        echo 
+            ('<script>
+                alert("login realizado com sucesso");
+
+                redirecionar("http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/");
+
+                function redirecionar(url){
+                    window.location.href = url;
+                } 
+            </script>');
     }
 
     // Fechar a declaração e a conexão

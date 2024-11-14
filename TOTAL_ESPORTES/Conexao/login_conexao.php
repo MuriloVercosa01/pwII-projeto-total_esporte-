@@ -34,8 +34,15 @@
         {
             echo("não há correspondência");
         } else{
-            echo("há correspondência");
-            echo '<srcipt>alert("cadastro realizado com sucesso");</script>;'
+            echo ('<script type="text/javascript" >
+                alert("cadastro realizado com sucesso");
+
+                redirecionar("http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/");
+
+                function redirecionar(url){
+                    window.location.href = url;
+                } 
+            </script>');
         }
     } else{
         echo("<h1> não tá tudo certo ai chefe</h1>");

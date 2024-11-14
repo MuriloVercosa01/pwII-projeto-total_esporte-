@@ -35,6 +35,7 @@
             echo("não há correspondência");
         } else{
             echo("há correspondência");
+            echo '<srcipt>alert("cadastro realizado com sucesso");</script>;'
         }
     } else{
         echo("<h1> não tá tudo certo ai chefe</h1>");

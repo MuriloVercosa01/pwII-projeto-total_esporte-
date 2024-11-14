@@ -25,7 +25,7 @@
 
             $stmt->execute();
 
-
+            header("Location: http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/login.php# ");
 
         }else{
             echo('senha não confere');

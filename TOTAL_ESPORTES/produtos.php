@@ -55,7 +55,7 @@
             if ($conexao->connect_error) {
                 die("Conexão falhou: " . $conexao->connect_error);
             }
-            $sql= "SELECT 	produto.id_produto,produto.modelo,categoria.categoria_prod,produto.desc_breve,produto.valor FROM produto JOIN categoria ON produto.categoria = categoria.id_cate;";
+            $sql= "SELECT 	produto.img,produto.modelo,categoria.categoria_prod,produto.desc_breve,produto.valor FROM produto JOIN categoria ON produto.categoria = categoria.id_cate;";
 
             $result = $conexao->query($sql);
 
@@ -63,7 +63,7 @@
                 while($row = $result->fetch_assoc()){
                     echo ("
                         <div class='card' >
-                            <img src='img/placeholder.jpg'>
+                            <img src='{$row['img']}'>
                             <h3>{$row['modelo']}</h3>
                             <p>{$row['categoria_prod']}</p>
                             <p>{$row['desc_breve']}</p>

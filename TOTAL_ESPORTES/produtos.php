@@ -49,15 +49,33 @@
                 </ul>
             </div>
         </div>
-
         <div class="card-box" >
-        <div class="card" ><img src="img/placeholder.jpg" ><h3>nome do modelo</h3><p>categoria</p><p>descrição breve teste teste teste teste teste teste</p><h3>valor $000,00</h3></div>
-        <div class="card" ><img src="img/placeholder.jpg" ><h3>nome do modelo</h3><p>categoria</p><p>descrição breve teste teste teste teste teste teste</p><h3>valor $000,00</h3></div>
-        <div class="card" ><img src="img/placeholder.jpg" ><h3>nome do modelo</h3><p>categoria</p><p>descrição breve teste teste teste teste teste teste</p><h3>valor $000,00</h3></div>
-        <div class="card" ><img src="img/placeholder.jpg" ><h3>nome do modelo</h3><p>categoria</p><p>descrição breve teste teste teste teste teste teste</p><h3>valor $000,00</h3></div>
-        <div class="card" ><img src="img/placeholder.jpg" ><h3>nome do modelo</h3><p>categoria</p><p>descrição breve teste teste teste teste teste teste</p><h3>valor $000,00</h3></div>
-        <div class="card" ><img src="img/placeholder.jpg" ><h3>nome do modelo</h3><p>categoria</p><p>descrição breve teste teste teste teste teste teste</p><h3>valor $000,00</h3></div>
-        <div class="card" ><img src="img/placeholder.jpg" ><h3>nome do modelo</h3><p>categoria</p><p>descrição breve teste teste teste teste teste teste</p><h3>valor $000,00</h3></div>
+        <?php
+            include('Conexao/conexao.php');
+            if ($conexao->connect_error) {
+                die("Conexão falhou: " . $conexao->connect_error);
+            }
+            $sql= "SELECT 	produto.id_produto,produto.modelo,categoria.categoria_prod,produto.desc_breve,produto.valor FROM produto JOIN categoria ON produto.categoria = categoria.id_cate;";
+
+            $result = $conexao->query($sql);
+
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                    echo ("
+                        <div class='card' >
+                            <img src='img/placeholder.jpg'>
+                            <h3>{$row['modelo']}</h3>
+                            <p>{$row['categoria_prod']}</p>
+                            <p>{$row['desc_breve']}</p>
+                            <h3>{$row['valor']}</h3>
+                        </div>
+                    ");
+                }
+            }else{
+                echo('nenhum produto encontrado');
+            }
+        ?>
+            <div class="card" ><img src="img/placeholder.jpg" ><h3>nome do modelo</h3><p>categoria</p><p>descrição breve teste teste teste teste teste teste</p><h3>valor $000,00</h3></div>
         </div>
     </main>
 </body>

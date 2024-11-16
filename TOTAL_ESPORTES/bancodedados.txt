@@ -1,7 +1,24 @@
 CREATE DATABASE total_esportes;
+use total_esportes;
 // após criar o banco de dados
 CREATE TABLE cadastros(
     id int AUTO_INCREMENT PRIMARY KEY,
     nome varchar(100),
     email varchar(100),
-    senha varchar(100));
+    senha varchar(100)
+);
+CREATE TABLE Categoria(
+    id_cate int AUTO_INCREMENT PRIMARY KEY,
+    nome varchar(30)
+);
+CREATE TABLE produto (
+    id_produto int AUTO_INCREMENT PRIMARY KEY,
+    modelo varchar(30),
+    categoria INT,
+    desc_breve varchar(150),
+    valor double,
+	FOREIGN KEY (categoria) REFERENCES Categoria(id_cate)
+);
+
+
+    

@@ -20,5 +20,23 @@ CREATE TABLE produto (
 	FOREIGN KEY (categoria) REFERENCES Categoria(id_cate)
 );
 
+//conteudo a ser inserido no banco de dados
+
+INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis1",2,"tenis de campo",1.500,00);
+INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis2",1,"tenis de society",500,00);
+INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis3",3,"tenis de quadra",700,00);
+INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis4",2,"tenis de campo 2",800,00);
+//selecionar informações do produto
+SELECT
+	produto.id_produto,
+    produto.modelo,
+    categoria.categoria_prod,
+    produto.desc_breve,
+    produto.valor
+FROM
+	produto
+JOIN
+	categoria ON produto.categoria = categoria.id_cate;
+
 
     

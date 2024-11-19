@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/449a3898b7.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="Estilos/compras.css">
+</head>
+<body>
+<header>
+
+<div class="container">
+    <div class="logo"><img src="imagens/Logo.png"></div>
+    <div class="menu">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Produtos</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contatos</a>
+        </nav>
+
+    </div>
+    <div class="btn-menu">
+        
+        <button><i class="fa-solid fa-user-plus"></i> <Br> <a href="cadastro.php">  Cadastre-se  </a>  </button>
+        <button><i class="fa-solid fa-right-to-bracket"></i> <Br> <a href="login.php">  Entrar  </a>  </button>
+
+    </div>
+</div>
+
+
+</header>
+<!-- A partir daqui começa minha parte do código-->
+<div class="barra-opcoes">
+    <button id="btn-voltar" class="btn">Voltar</button>
+    <button id="btn-excluir" class="btn">Excluir Itens</button>
+    <button id="btn-finalizar" class="btn">Finalizar Compra</button>
+</div>
+
+<div class="conteudo-carrinho">
+    <h2>Resumo do Carrinho</h2>
+    <table id="tabela-carrinho">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço Unitário</th>
+                <th>Quantidade</th>
+                <th>Total</th>
+                <th>Excluir</th>
+            </tr>
+        </thead>
+        <tbody id="lista-carrinho">
+            <!-- Itens do carrinho serão listados aqui -->
+        </tbody>
+    </table>
+
+    <div class="total">
+        <p><strong>Total: </strong> R$ <span id="total-carrinho">0,00</span></p>
+    </div>
+</body>
+</html>

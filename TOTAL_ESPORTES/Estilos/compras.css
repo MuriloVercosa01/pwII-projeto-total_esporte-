@@ -1,0 +1,162 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+}
+
+.container{
+   max-width: 1080px;
+   margin: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+header{
+    background-color: black;
+    width: 100%;
+    padding: 15px;
+    padding-left: 80px;
+ }
+
+ .logo,.btn-menu{
+    width: 25%;
+    
+ }
+
+ .logo img{
+    width: 200px;
+    cursor: pointer;
+ }
+
+ .menu{
+    width: 50%;
+ }
+
+ .menu nav a{
+    color: white;
+    text-decoration: none;
+    padding-right: 70px;
+    font-size: 18px;
+    position: relative;
+ }
+
+ .menu nav a::after{
+   content: "  ";
+   width: 0px;
+   height: 4px;
+   background-image: linear-gradient(45deg, #ff2500, #ff7100 );
+   position: absolute;
+   top: 30px;
+   left: 0%;
+   transition: width 0.5s;
+
+ }
+
+ .menu nav a:hover::after{
+    width: 30px;
+ }
+
+
+
+ .btn-menu button{
+    width: 70px;
+    height: 50px;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100 );
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 30px;
+ }
+
+ .btn-menu button i{
+    font-size: 20px;
+    color: white;
+
+ }
+
+
+.btn-menu button  a{
+   font-size: 10px;
+   color: white;
+   padding-top: 10px;
+   text-decoration: none;
+
+}
+
+/* minha parte de edição começa aqui*/
+/* styles.css */
+ 
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.barra-opcoes {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.barra-opcoes .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.barra-opcoes .btn:hover {
+    background-color: #0056b3;
+}
+
+.conteudo-carrinho {
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+#tabela-carrinho {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#tabela-carrinho th, #tabela-carrinho td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+#tabela-carrinho th {
+    background-color: #f4f4f4;
+}
+
+#tabela-carrinho td input {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+}
+
+.total {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.total span {
+    color: green;
+}

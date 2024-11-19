@@ -14,8 +14,8 @@
             <div class="logo"><img src="imagens/Logo.png"></div>
             <div class="menu">
                 <nav>
-                    <a href="#">Home</a>
-                    <a href="#">Produtos</a>
+                    <a href="Home.html">Home</a>
+                    <a href="produtos.php">Produtos</a>
                     <a href="#">Sobre</a>
                     <a href="#">Contatos</a>
                 </nav>
@@ -37,6 +37,7 @@
             <img src="https://cdn-icons-png.flaticon.com/512/3183/3183361.png" >
         </div>
     </div>
+    <section><h1 class="destaque" >Produtos em destaque</h1></section>
     <main>
         <div class="sidebar" >
             <div class="lista" >

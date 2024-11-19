@@ -9,10 +9,11 @@ CREATE TABLE cadastros(
 );
 CREATE TABLE Categoria(
     id_cate int AUTO_INCREMENT PRIMARY KEY,
-    nome varchar(30)
+    categoria_prod varchar(30)
 );
 CREATE TABLE produto (
     id_produto int AUTO_INCREMENT PRIMARY KEY,
+	img varchar(300),
     modelo varchar(30),
     categoria INT,
     desc_breve varchar(150),
@@ -20,15 +21,19 @@ CREATE TABLE produto (
 	FOREIGN KEY (categoria) REFERENCES Categoria(id_cate)
 );
 
-//conteudo a ser inserido no banco de dados
+//conteudo a ser inserido no banco de dados abaixo
 
-INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis1",2,"tenis de campo",1.500,00);
-INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis2",1,"tenis de society",500,00);
-INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis3",3,"tenis de quadra",700,00);
-INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis4",2,"tenis de campo 2",800,00);
+//categorias a serem adicionadas
+
+INSERT into categoria ( categoria_prod) VALUES ("Society"),("Campo"),("Quadra");
+
+INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis1",2,"tenis de campo",1500.00);
+INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis2",1,"tenis de society",500.00);
+INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis3",3,"tenis de quadra",700.00);
+INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis4",2,"tenis de campo 2",800.00);
 //selecionar informações do produto
 SELECT
-	produto.id_produto,
+produto.id_produto,
     produto.modelo,
     categoria.categoria_prod,
     produto.desc_breve,

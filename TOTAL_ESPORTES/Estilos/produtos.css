@@ -122,6 +122,11 @@ main{
 #pesquisa::placeholder{
     color: white;
 }
+
+.destaque{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
 /*formatação do <div> sidebar abaixo*/
 .lista{
     margin-top: 20px;

@@ -19,8 +19,8 @@
             <div class="logo"><img src="imagens/Logo.png"></div>
             <div class="menu">
                 <nav>
-                    <a href="#">home</a>
-                    <a href="#">produtos</a>
+                    <a href="Home.html">home</a>
+                    <a href="produtos.php">produtos</a>
                     <a href="#">sobre</a>
                     <a href="#">contatos</a>
                 </nav>

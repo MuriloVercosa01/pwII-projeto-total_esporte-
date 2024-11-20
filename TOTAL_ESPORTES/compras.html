@@ -31,32 +31,34 @@
 
 
 </header>
-<!-- A partir daqui começa minha parte do código-->
-<div class="barra-opcoes">
-    <button id="btn-voltar" class="btn">Voltar</button>
-    <button id="btn-excluir" class="btn">Excluir Itens</button>
-    <button id="btn-finalizar" class="btn">Finalizar Compra</button>
-</div>
-
-<div class="conteudo-carrinho">
-    <h2>Resumo do Carrinho</h2>
-    <table id="tabela-carrinho">
-        <thead>
-            <tr>
-                <th>Produto</th>
-                <th>Preço Unitário</th>
-                <th>Quantidade</th>
-                <th>Total</th>
-                <th>Excluir</th>
-            </tr>
-        </thead>
-        <tbody id="lista-carrinho">
-            <!-- Itens do carrinho serão listados aqui -->
-        </tbody>
-    </table>
-
-    <div class="total">
-        <p><strong>Total: </strong> R$ <span id="total-carrinho">0,00</span></p>
+<h2 class="cart title"> Resumo de Itens</h2>
+<div class="cart-container">
+    <div class="tabs">
+        <button class="tab-button active" onclick="showTab('items')">Itens</button>
+        <button class="tab-button" onclick="showTab('summary')">Resumo</button>
     </div>
+
+    <div class="tab-content" id="items">
+        <h2>Itens no Carrinho</h2>
+        <div class="cart-item">
+            <p>Produto 1 - R$ 50,00</p>
+            <button onclick="removeItem('item1')">Remover</button>
+        </div>
+        <div class="cart-item">
+            <p>Produto 2 - R$ 30,00</p>
+            <button onclick="removeItem('item2')">Remover</button>
+        </div>
+    </div>
+
+    <div class="tab-content" id="summary" style="display:none;">
+        <h2>Resumo de Compra</h2>
+        <p>Total: R$ 80,00</p>
+        <p>Frete: R$ 10,00</p>
+        <p><strong>Total Final: R$ 90,00</strong></p>
+    </div>
+
+    <button class="finalize-btn">Finalizar Compra</button>
+</div>
+    
 </body>
 </html>

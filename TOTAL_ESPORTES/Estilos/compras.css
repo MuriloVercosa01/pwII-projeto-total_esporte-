@@ -91,72 +91,89 @@ header{
  
 /* styles.css */
 
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.barra-opcoes {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
 }
 
-.barra-opcoes .btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
+.cart-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    padding: 10px;
+    background-color: #ddd;
+    border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
     transition: background-color 0.3s;
 }
 
-.barra-opcoes .btn:hover {
-    background-color: #0056b3;
+.tab-button.active {
+    background-color: #007bff;
+    color: white;
 }
 
-.conteudo-carrinho {
-    padding: 20px;
+.tab-button:hover {
+    background-color: #ccc;
 }
 
-h2 {
-    color: #333;
+.tab-content {
+    display: none;
 }
 
-#tabela-carrinho {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+.tab-content.active {
+    display: block;
 }
 
-#tabela-carrinho th, #tabela-carrinho td {
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
     padding: 10px;
-    text-align: left;
+    background-color: #f9f9f9;
     border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-#tabela-carrinho th {
-    background-color: #f4f4f4;
-}
-
-#tabela-carrinho td input {
-    width: 50px;
-    padding: 5px;
-    text-align: center;
-}
-
-.total {
+.finalize-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     margin-top: 20px;
-    font-size: 1.2em;
-    font-weight: bold;
 }
 
-.total span {
-    color: green;
+.finalize-btn:hover {
+    background-color: #218838;
+}
+
+h2{
+    text-align: center;
+    height: 0px;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

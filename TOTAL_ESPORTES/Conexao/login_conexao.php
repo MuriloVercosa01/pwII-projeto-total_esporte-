@@ -1,56 +1,42 @@
 <?php
-if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])) {
-    print_r("<br>tá funcionando<br>");
+    print_r($_REQUEST);
+    if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']) )
+    {
+        print_r("tá funcionando");
+        include_once("conexao.php");
+        if($conexao->connect_error){
+            die("Conexão falhou:" . $conexao->connect_error);
+        }
+        $_email = $_POST['email'];
+        $_senha = $_POST['senha'];
 
-    include_once("conexao.php");
+        $sql = "SELECT * FROM cadastros WHERE email = ? AND senha = ?";
 
-    if ($conexao->connect_error) {
-        die("Conexão falhou: " . $conexao->connect_error);
-    }
+        $stmt = $conexao->prepare($sql);
 
-    // Definindo as variáveis para o email e senha
-    $_email = $_POST['email'];
-    $_senha = $_POST['senha'];
+        if($stmt === false){
+            echo("erro na preparação da consulta:" . $conexao->error);
+        }
+        $stmt->bind_param("ss", $email,$senha);
 
-    // Consulta SQL com placeholders para evitar SQL Injection
-    $sql = "SELECT * FROM cadastros WHERE email = ? AND senha = ?";
+        $execute_result = $stmt->get_result();
 
-    // Preparando a consulta
-    $stmt = $conexao->prepare($sql);
-
-    if ($stmt === false) {
-        echo("Erro na preparação da consulta: " . $conexao->error);
-        exit; // Caso haja erro, saia do script
-    }
-
-    // Vinculando os parâmetros
-    $stmt->bind_param("ss", $_email, $_senha);
-
-    // Executando a consulta
-    $stmt->execute();
-
-    // Obtendo o resultado
-    $result = $stmt->get_result();
-
-    if ($result === false) {
-        die("Erro ao obter o resultado: " . $stmt->error);
-    }
-
-    // Verificando o número de resultados
-    if (mysqli_num_rows($result) < 1) {
-        echo ('<script>
-                alert("dados inválidos");
-
-                redirecionar("http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/login.php");
-
-                function redirecionar(url){
-                    window.location.href = url;
-                } 
-            </script>');
-    } else {
-        echo 
-            ('<script>
-                alert("login realizado com sucesso");
+        if($execute_result === false){
+            die("erro ao obter a pesquisa:" . $stmt->error);
+        }
+        $result = $stmt->get_result();
+        
+        if($result === false){
+            die("erro ao obter resultado". $stmt->error);
+        }
+        print_r($result);
+        if(mysqli_num_rows($result = "0"))
+        {
+            echo("não há correspondência");
+        } else{
+            
+            echo ('<script type="text/javascript" >
+                alert("cadastro realizado com sucesso");
 
                 redirecionar("http://localhost/pwII-projeto-total_esporte-/TOTAL_ESPORTES/");
 
@@ -58,13 +44,8 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha']
                     window.location.href = url;
                 } 
             </script>');
+        }
+    } else{
+        echo("<h1> não tá tudo certo ai chefe</h1>");
     }
-
-    // Fechar a declaração e a conexão
-    $stmt->close();
-    $conexao->close();
-
-} else {
-    echo "<h1>Não está tudo certo aí, chefe!</h1>";
-}
 ?>

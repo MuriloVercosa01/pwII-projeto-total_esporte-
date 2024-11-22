@@ -89,11 +89,41 @@ header{
 /* a partir daqui formatação da página em específico*/
 
 .chuteira-1{
- margin-top: 20px;
+ margin-top: 40px;
  margin-left: 30px;
 
 
 }
+
+.col-2{
+margin-top: 50px;
+padding:25px;
+
+}
+
+
+
+.btn-Compras{
+   width: 70px;
+   height: 50px;
+   background-image: linear-gradient(45deg, #ff2500, #ff7100 );
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   margin-right: 30px;
+
+}
+
+.btn-Compras h1 {
+  
+   font-size: 20px;
+   color: white;
+
+
+}
+
+
+
 
 main {
     display: flex;

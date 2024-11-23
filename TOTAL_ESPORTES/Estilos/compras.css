@@ -105,6 +105,7 @@ main{
 h2 {
     text-align: center;
     color: #333;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 table {
@@ -115,8 +116,9 @@ table {
 
 th, td {
     padding: 12px;
-    text-align: left;
+    text-align: center;
     border: 1px solid #ddd;
+
 }
 
 th {
@@ -128,6 +130,33 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-tr:hover {
-    background-color: #f1f1f1;
+
+.button-container {
+    display: flex; /* Usando Flexbox para organizar os botões */
+            justify-content: center;
+            gap: 10px; /* Espaçamento entre os botões */
 }
+
+button {
+    padding: 6px 12px;
+    border: none;
+    background-color: rgb(255, 128, 0);
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 75px;    
+}
+button:hover{
+    background-color: #ff2500;
+}
+
+.quantity {
+    width: 40px; /* Define a largura do input como 50px */
+    height: 27px;
+    text-align: center;
+    border: 2px solid #007bff; /* Adiciona uma borda de 2px de espessura, com cor azul */
+    border-radius: 4px; /* Arredonda os cantos da borda */
+    padding: 5px; /* Espaço interno dentro do input */
+
+}
+

@@ -1,13 +1,12 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
 
-
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: sans-serif;
 }
 
-.container{
+.container {
    max-width: 1080px;
    margin: auto;
    display: flex;
@@ -15,121 +14,139 @@
    justify-content: center;
 }
 
-header{
-    background-color: black;
-    width: 100%;
-    padding: 15px;
-    padding-left: 80px;
- }
+header {
+   background-color: black;
+   width: 100%;
+   padding: 15px;
+   padding-left: 80px;
+}
 
- .logo,.btn-menu{
-    width: 25%;
-    
- }
+.logo, .btn-menu {
+   width: 25%;
+}
 
- .logo img{
-    width: 200px;
-    cursor: pointer;
- }
+.logo img {
+   width: 200px;
+   cursor: pointer;
+}
 
- .menu{
-    width: 50%;
- }
+.menu {
+   width: 50%;
+}
 
- .menu nav a{
-    color: white;
-    text-decoration: none;
-    padding-right: 70px;
-    font-size: 18px;
-    position: relative;
- }
+.menu nav a {
+   color: white;
+   text-decoration: none;
+   padding-right: 70px;
+   font-size: 18px;
+   position: relative;
+}
 
- .menu nav a::after{
-   content: "  ";
+.menu nav a::after {
+   content: " ";
    width: 0px;
    height: 4px;
-   background-image: linear-gradient(45deg, #ff2500, #ff7100 );
+   background-image: linear-gradient(45deg, #ff2500, #ff7100);
    position: absolute;
    top: 30px;
    left: 0%;
    transition: width 0.5s;
-
- }
-
- .menu nav a:hover::after{
-    width: 30px;
- }
-
-
-
- .btn-menu button{
-    width: 70px;
-    height: 50px;
-    background-image: linear-gradient(45deg, #ff2500, #ff7100 );
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-right: 30px;
- }
-
- .btn-menu button i{
-    font-size: 20px;
-    color: white;
-
- }
-
-
-.btn-menu button  a{
-   font-size: 10px;
-   color: white;
-   padding-top: 10px;
-   text-decoration: none;
-
-}
-/* a partir daqui formatação da página em específico*/
-
-.chuteira-1{
- margin-top: 40px;
- margin-left: 30px;
-
-
 }
 
-.col-2{
-margin-top: 50px;
-padding:25px;
-
+.menu nav a:hover::after {
+   width: 30px;
 }
 
-
-
-.btn-Compras{
+.btn-menu button {
    width: 70px;
    height: 50px;
-   background-image: linear-gradient(45deg, #ff2500, #ff7100 );
+   background-image: linear-gradient(45deg, #ff2500, #ff7100);
    border: none;
    border-radius: 8px;
    cursor: pointer;
    margin-right: 30px;
-
 }
 
-.btn-Compras h1 {
-  
+.btn-menu button i {
    font-size: 20px;
    color: white;
+}
 
-
+.btn-menu button a {
+   font-size: 10px;
+   color: white;
+   padding-top: 10px;
+   text-decoration: none;
 }
 
 
+/*estilização da página em especifico*/
 
 
+.col-2 {
+   margin-top: 50px;
+   padding: 25px;
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+}
+
+.tabela-produto {
+   width: 25%; /* A largura da tabela */
+   margin-right: -10px; /* Espaçamento entre a tabela e o conteúdo à direita */
+}
+
+table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-left: 50px;
+}
+
+td {
+   text-align: center;
+   padding: 10px;
+   border: 1px solid #ddd;
+}
+
+
+.imgChuteira {
+   margin-left: 50%;
+}
+
+#textos {
+   width: 70%;
+   margin-left: 15px;
+}
+
+#Parcelas, #tamanho {
+   border-radius: 10px;
+}
+
+#btn-compras1, #btn-carrinho {
+   background-color: green;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   font-size: 12px;
+   cursor: pointer;
+   padding: 12px;
+}
+
+#Quantidade {
+   background-color: grey;
+   color: white;
+}
+
+h3 {
+   width: 500px;
+}
+
+#desc_breve {
+   height: 250px;
+}
+
+/* Ajustes de layout */
 main {
-    display: flex;
-    background-color:white;
+   display: flex;
+   background-color: white;
 }
- 
-
-
-

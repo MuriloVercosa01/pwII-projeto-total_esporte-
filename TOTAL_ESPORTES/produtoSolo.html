@@ -37,49 +37,67 @@
 
     </header>
     <main>
-
-        <div class=" chuteira-1">
-
-            <div class="imgChuteira"><img src="imagens/nike.avif" width="500px"></div>
-
+        <div class="col-2">
+            <!-- Tabela à esquerda -->
+            <div class="tabela-produto">
+                <table>
+                    <tr>
+                        <td><img src="imagens/chuteira 2.webp" alt="Produto 1" width="100px"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="imagens/chuteira 2.webp" alt="Produto 2" width="100px"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="imagens/chuteira 2.webp" alt="Produto 3" width="100px"></td>
+                    </tr>
+                </table>
+            </div>
+    
+            <!-- Imagem do produto -->
+            <div class="imgChuteira">
+                <img src="imagens/nike.avif" width="500px">
+            </div>
+    
+            <!-- Texto e formulário -->
+            <div id="textos">
+                <p>Chuteira Nike Zoom Mercurial Superfly 9 Elite</p>
+                <h1>Chuteira de campo</h1>
+                <h4>R$699,00  Ou  Até 12x sem Juros</h4>
+    
+                <!-- Formulários e botões -->
+                <form action="" method="post">
+                    <select id="Parcelas" name="">
+                        <option value="">QTD de Parcelas</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                    </select>
+                    <br><br>
+                    <select id="tamanho" name="">
+                        <option value="">Selecione o Tamanho</option>
+                        <option value="">38</option>
+                        <option value="">39</option>
+                        <option value="">40</option>
+                        <option value="">41</option>
+                    </select>
+                    <br><br>
+                    <p>Quantidade</p>
+                    <input id="Quantidade" type="number" value="1">
+                    <button id="btn-carrinho" type="submit" class="btn"><h1>Adicionar Carrinho</h1></button>
+                </form>
+    
+                <h3>Descrição</h3>
+                <h3 id="desc_breve">Texto de descrição do produto...</h3>
+                <button id="btn-compras1" type="submit" class="btn"><h1>Compra</h1></button>
+            </div>
         </div>
-
-         <div class="col-2">
-            <p>Chuteira Nike Zoom Mercurial Superfly 9 Elite</p>
-            <h1>Chuteira de campo </h1>
-            <h4>R$699,00</h4>
-
-            <form action="" method="post">
-
-            <select name="" id="">
-             <option value="">Selecione o Tamanho</option>
-             <option value="">38</option>
-             <option value="">39</option>
-             <option value="">40</option>
-             <option value="">41</option>
-            </select>
-
-            <input type="number" value="1">
-
-            
-        
-            
-
-            </form>
-
-            <h3>Descrição</h3>
-            <p>É uma chuteira de uma marca altamente reconhecida que traz como sua prioridade o rendimento e o conforto com segurança e tecnologia.</p>
-             <br><br>
-
-             <div class="btn-Compras">
-
-             <button type="submit" class="btn"><h1>Compra</h1></button>
-             <button type="submit" class="btn"><h1>Adicionar Carrinho</h1></button>
-             
-             </div>
-             
-
-         </div>
-
     </main>
+    
+
+        
+
 </body>

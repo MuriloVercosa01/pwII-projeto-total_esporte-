@@ -33,40 +33,50 @@
 </header>
 <main>
 <div class="container-main">
-        <h2>Resumo de Itens</h2>
+        <h2> Carrinho de Compras </h2>
         <table>
             <thead>
                 <tr>
-                    <th>Modelo</th>
-                    <th>Categoria</th>
-                    <th>Tamanho</th>
-                    <th>Quantidade</th>
+                    <th>ITEM</th>
+                    <th>PREÇO</th>
+                    <th>QUANTIDADE</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Produto A</td>
-                    <td>Eletrônicos</td>
-                    <td>M</td>
-                    <td>20</td>
+                    <td>  <div class="item-container">
+                        <img src="https://imgnike-a.akamaihd.net/1920x1920/0225960V.jpg" alt="Chuteira A" class="item-image"> Chuteira Nike Zoom Mercurial Superfly 9 Elite Campo</td>
+                    <td>R$ 249,90</td>
+                    <td><input class="quantity" type="number" value="1" min="1" />
+                        <button onclick="removeItem(this)">Remover</button>
+                    </td>
+                    <div class="button-container">
+                
+                    </div>
+                   
                 </tr>
                 <tr>
-                    <td>Produto B</td>
-                    <td>Vestuário</td>
-                    <td>P</td>
-                    <td>50</td>
+                    <td>  <div class="item-container">
+                        <img src="https://imgnike-a.akamaihd.net/1300x1300/022595O6A10.jpg" alt="Chuteira A" class="item-image">Chuteira Nike Mercurial Vapor 15 Elite Campo</td>
+                    <td>R$ 339,59</td>
+                    <td><input class="quantity" type="number" value="1" min="1" />
+                        <button onclick="removeItem(this)">Remover</button>
+                    </td>
+                    
                 </tr>
                 <tr>
-                    <td>Produto C</td>
-                    <td>Alimentos</td>
-                    <td>Unidade</td>
-                    <td>100</td>
+                    <td>  <div class="item-container">
+                        <img src="https://images.tcdn.com.br/img/img_prod/1141538/chuteira_nike_campo_phantom_gx_club_preto_vermelho_16227_1_d9321f755e14d74d71ec2f64b14568f6.jpg" alt="Chuteira A" class="item-image">Chuteira Nike Campo Phantom GX Club Preto/Vermelho</td>
+                    <td>R$ 189,90</td>
+                    <td><input class="quantity" type="number" value="1" min="1" />
+                        <button onclick="removeItem(this)">Remover</button>
+                    </td>   
                 </tr>
+                <button class="checkout-button">Finalizar Compra</button>
                 <tr>
-                    <td>Produto D</td>
-                    <td>Livros</td>
-                    <td>Único</td>
-                    <td>30</td>
+                    
+                   
+                   
                 </tr>
             </tbody>
         </table>

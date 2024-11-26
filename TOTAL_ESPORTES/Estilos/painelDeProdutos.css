@@ -88,13 +88,11 @@ header{
 /* a partir daqui formatação da página em específico*/
 
 main{
-   background-image: linear-gradient(45deg, black, lightgray);
    width: 100%;
    height: 100vh;
 }
 main h1{
-   font-size: 50px;
-   color: white;
+   font-size: 30px;
    margin-left: 100px;
 }
 .painel{
@@ -102,7 +100,43 @@ main h1{
    top: 60%;
    left: 50%;
    transform: translate(-50% , -50%);
-   background-color: #ff7100;
+   background-color: aliceblue;
+   border-radius: 5px;
    width: 80%;
    height: 60vh;
+}
+.painel h1{
+   margin-left: 70px;
+}
+table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 20px;
+}
+table th{
+   border-bottom: 1px solid black;
+}
+table tbody tr:nth-child(odd){
+   background-color: #E6E6FA;
+}
+
+.container-lista table{
+   width: 100%;
+   text-align: center;
+}
+button {
+   padding: 5px 10px;
+   margin: 3px;
+   cursor: pointer;
+   border-radius: 3px;
+}
+.edit-btn {
+   background-color: #4CAF50; /* Verde */
+   color: white;
+   border: none;
+}        
+.delete-btn {
+   background-color: #f44336; /* Vermelho */
+   color: white;
+   border: none;
 }

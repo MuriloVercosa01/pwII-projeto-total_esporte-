@@ -1,6 +1,7 @@
 CREATE DATABASE total_esportes;
 use total_esportes;
-// após criar o banco de dados
+
+
 CREATE TABLE cadastros(
     id int AUTO_INCREMENT PRIMARY KEY,
     nome varchar(100),

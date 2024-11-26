@@ -23,8 +23,8 @@
             </div>
             <div class="btn-menu">
                 
-                <button><i class="fa-solid fa-user-plus"></i> <Br> <a href="cadastro.php">  Cadastre-se  </a>  </button>
-                <button><i class="fa-solid fa-right-to-bracket"></i> <Br> <a href="login.php">  Entrar  </a>  </button>
+                <button><i class="fa-solid fa-user-plus"></i> <Br> <a href="cadastro.html">  Cadastre-se  </a>  </button>
+                <button><i class="fa-solid fa-right-to-bracket"></i> <Br> <a href="login.html">  Entrar  </a>  </button>
 
             </div>
         </div>

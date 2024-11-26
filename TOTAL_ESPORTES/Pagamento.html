@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="PT-Br">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="Estilos/Pagamento.css">
+</head>
+<body>
+
+    
+    <div class="container-pagamento">
+        <form action="">
+            <!-- Linha principal que divide o formulário em duas colunas -->
+            <div class="linha">
+                <!-- Primeira coluna: Endereço de Cobrança -->
+                <div class="coluna">
+                    <h3 class="titulo">Endereço de Cobrança</h3>
+                    <!-- Campo: Nome completo -->
+                    <div class="caixa-de-entrada">
+                        <samp>Nome Completo</samp>
+                        <input type="text" placeholder="João Silva">
+                    </div>
+                    <!-- Campo: E-mail -->
+                    <div class="caixa-de-entrada">
+                        <samp>E-mail</samp>
+                        <input type="email" placeholder="exemplo@gmail.com">
+                    </div>
+                    <!-- Campo: Endereço -->
+                    <div class="caixa-de-entrada">
+                        <samp>Endereço</samp>
+                        <input type="text" placeholder="Rua, Bairro, Localidade">
+                    </div>
+                    <!-- Campo: Cidade -->
+                    <div class="caixa-de-entrada">
+                        <samp>Cidade</samp>
+                        <input type="text" placeholder="São Paulo">
+                    </div>
+    
+                    <!-- Campos flexíveis: Estado e CEP -->
+                    <div class="flexivel">
+                        <div class="caixa-de-entrada">
+                            <samp>Estado</samp>
+                            <input type="text" placeholder="SP">
+                        </div>
+    
+                        <div class="caixa-de-entrada">
+                            <samp>CEP</samp>
+                            <input type="number" placeholder="12345-678">
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Segunda coluna: Informações de Pagamento -->
+                <div class="coluna">
+                    <h3 class="titulo">Pagamento</h3>
+                    <!-- Imagem de cartões aceitos -->
+                    <div class="caixa-de-entrada">
+                        <samp>Cartões Aceitos</samp>
+                        <img src="imagens/imgcards.png" alt="Cartões Aceitos">
+                    </div>
+                    <!-- Campo: Nome no cartão -->
+                    <div class="caixa-de-entrada">
+                        <samp>Nome no Cartão</samp>
+                        <input type="text" placeholder="Sr. João Silva">
+                    </div>
+                    <!-- Campo: Número do cartão -->
+                    <div class="caixa-de-entrada">
+                        <samp>Número do Cartão</samp>
+                        <input type="number" placeholder="1111 2222 3333 4444">
+                    </div>
+                    <!-- Campo: Mês de Expiração -->
+                    <div class="caixa-de-entrada">
+                        <samp>Mês de Expiração</samp>
+                        <input type="text" placeholder="Julho">
+                    </div>
+    
+                    <!-- Campos flexíveis: Ano de Expiração e CVV -->
+                    <div class="flexivel">
+                        <div class="caixa-de-entrada">
+                            <samp>Ano de Expiração</samp>
+                            <input type="number" placeholder="2025">
+                        </div>
+    
+                        <div class="caixa-de-entrada">
+                            <samp>CVV</samp>
+                            <input type="number" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Botão de submissão -->
+            <button type="submit" class="botao">Enviar</button>
+        </form>
+    </div>
+    
+    
+ 
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Container principal renomeado */
+.container-pagamento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+    padding: 25px;
+}
+
+/* Estilo do formulário */
+.container-pagamento form {
+    width: 700px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Organização das colunas */
+form .linha {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.linha .coluna {
+    flex: 1 1 250px;
+}
+
+/* Títulos das colunas */
+.coluna .titulo {
+    font-size: 20px;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+/* Campos de entrada */
+.coluna .caixa-de-entrada {
+    margin: 15px 0;
+}
+
+.caixa-de-entrada samp {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.caixa-de-entrada input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+/* Layout flexível para múltiplos campos */
+.coluna .flexivel {
+    display: flex;
+    gap: 15px;
+}
+
+.flexivel .caixa-de-entrada {
+    margin-top: 5px;
+}
+
+/* Estilo da imagem dos cartões */
+.caixa-de-entrada img {
+    height: 32px;
+    width: 150px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+/* Botão de envio */
+form .botao {
+    width: 100%;
+    padding: 12px;
+    background-color: #8175d3;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-size: 17px;
+    color: white;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+form .botao:hover {
+    background-color: #6a5acd;
+}

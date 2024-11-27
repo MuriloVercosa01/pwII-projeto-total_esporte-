@@ -14,7 +14,7 @@
             <div class="logo"><img src="imagens/Logo.png"></div>
             <div class="menu">
                 <nav>
-                    <a href="Home.html">Home</a>
+                    <a href="index.html">Home</a>
                     <a href="produtos.php">Produtos</a>
                     <a href="#">Sobre</a>
                     <a href="#">Contatos</a>

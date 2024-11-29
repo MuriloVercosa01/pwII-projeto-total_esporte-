@@ -1,38 +1,50 @@
-CREATE DATABASE total_esportes;
-use total_esportes;
 
+BANCO DE DADOS ATUALIZADO TOTAL_ESPORTES
+
+COPIAR E COLAR NO XAMPP ATÉ A PRÓXIMA LINHA
+----------------------------------------------------------------------------------
+CREATE DATABASE total_esporte;
+
+use total_esporte;
 
 CREATE TABLE cadastros(
-    id int AUTO_INCREMENT PRIMARY KEY,
-    nome varchar(100),
-    email varchar(100),
-    senha varchar(100)
+	id_cliente int PRIMARY KEY AUTO_INCREMENT,
+    email varchar(150),
+    senha varchar(10),
+    nome varchar(50)
 );
-CREATE TABLE Categoria(
-    id_cate int AUTO_INCREMENT PRIMARY KEY,
-    categoria_prod varchar(30)
+CREATE TABLE cart(
+    id_cart int PRIMARY KEY AUTO_INCREMENT,
+    id_cliente int,
+    status boolean,
+    FOREIGN KEY (id_cliente) REFERENCES cadastros(id_cliente)
 );
-CREATE TABLE produto (
-    id_produto int AUTO_INCREMENT PRIMARY KEY,
-	img varchar(300),
-    modelo varchar(30),
-    categoria INT,
-    desc_breve varchar(150),
-    valor double,
-	FOREIGN KEY (categoria) REFERENCES Categoria(id_cate)
+CREATE TABLE categoria(
+    id_categoria int PRIMARY key AUTO_INCREMENT,
+    prod_cate varchar(45)
+);
+CREATE TABLE produto(
+    id_produto int PRIMARY KEY AUTO_INCREMENT,
+    modelo varchar(50),
+    preco double,
+    tamanho int,
+    imagem varchar(500),
+    id_categoria int,
+    FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
+);
+CREATE TABLE cart_itens(
+    id_cart_itens int PRIMARY KEY AUTO_INCREMENT,
+    id_cart INT,
+    id_cliente INT,
+    id_produto INT,
+    FOREIGN KEY (id_cliente) REFERENCES cadastros (id_cliente),
+    FOREIGN KEY (id_cart) REFERENCES cart (id_cart),
+    FOREIGN KEY (id_produto) REFERENCES produto (id_produto),
+    quantidade int
 );
 
-//conteudo a ser inserido no banco de dados abaixo
 
-//categorias a serem adicionadas
-
-INSERT into categoria ( categoria_prod) VALUES ("Society"),("Campo"),("Quadra");
-
-INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis1",2,"tenis de campo",1500.00);
-INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis2",1,"tenis de society",500.00);
-INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis3",3,"tenis de quadra",700.00);
-INSERT INTO produto (modelo,categoria,desc_breve,valor) values ("tenis4",2,"tenis de campo 2",800.00);
-//selecionar informações do produto
+------------------------------------------------------------------------------------
 SELECT
 produto.id_produto,
     produto.modelo,

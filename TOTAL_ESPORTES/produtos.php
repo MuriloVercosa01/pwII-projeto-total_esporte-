@@ -74,19 +74,19 @@
             if ($conexao->connect_error) {
                 die("Conexão falhou: " . $conexao->connect_error);
             }
-            $sql= "SELECT 	produto.imagem,produto.modelo,categoria.categoria_prod,produto.desc_breve,produto.valor FROM produto JOIN categoria ON produto.categoria = categoria.id_cate;";
+            $sql_prod= "SELECT produto.imagem,produto.modelo,sub_categoria.s_categoria,produto.desc_breve,produto.preco FROM produto INNER JOIN sub_categoria ON produto.id_categoria = sub_categoria.id_sub_categoria;";
 
-            $result = $conexao->query($sql);
+            $result_prod = $conexao->query($sql_prod);
 
-            if($result->num_rows > 0){
-                while($row = $result->fetch_assoc()){
+            if($result_prod->num_rows > 0){
+                while($row_prod = $result_prod->fetch_assoc()){
                     echo ("
                         <div class='card' >
-                            <img src='{$row['imagem']}'>
-                            <h3>{$row['modelo']}</h3>
-                            <p>{$row['categoria_prod']}</p>
-                            <p>{$row['desc_breve']}</p>
-                            <h3>{$row['valor']}</h3>
+                            <img src='{$row_prod['imagem']}'>
+                            <h3>{$row_prod['modelo']}</h3>
+                            <p>{$row_prod['s_categoria']}</p>
+                            <p>{$row_prod['desc_breve']}</p>
+                            <h3>{$row_prod['preco']}</h3>
                         </div>
                     ");
                 }

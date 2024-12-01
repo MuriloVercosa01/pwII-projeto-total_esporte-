@@ -35,6 +35,7 @@ CREATE TABLE produto(
     preco double,
     tamanho int,
     imagem varchar(500),
+    desc_breve varchar(150),
     id_categoria int,
     FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
 );
@@ -64,6 +65,17 @@ SELECT sub_categoria.s_categoria, categoria.nome_categoria
 FROM sub_categoria
 JOIN categoria ON sub_categoria.id_categoria = categoria.id_categoria;
 ------------------------------------------------------------------------------------
+// INSERIR OS PRODUTOS NO BANCO DE DADOS
+// TEMPLATE ABAIXO
+INSERT INTO 
+produto (imagem,modelo,id_categoria,desc_breve,preco) 
+VALUES (
+    "aidicione a imagem aqui",
+    "adicione o modelo aqui",
+    coloque o numero correspondente a categoria,
+    "adicione a descrição breve",
+    adicione o preço aqui
+	);
 
 
     

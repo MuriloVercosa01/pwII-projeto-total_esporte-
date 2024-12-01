@@ -7,7 +7,7 @@
 $username = "root";
 $password = "";
 $host = "Localhost";
-$dbName = "total_esportes";
+$dbName = "total_esporte";
 
 $conexao = new mysqli($host,$username,$password,$dbName);
 ?>

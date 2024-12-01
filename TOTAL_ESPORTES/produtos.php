@@ -56,9 +56,9 @@
                         $result_sub = $conexao->query($sql_sub);
 
                         echo "<ul>";
-                            echo $row['nome_categoria'];
+                            echo "<h1>" . $row['nome_categoria'] . "</h1>";
                             while ($row_sub = $result_sub->fetch_assoc()){
-                                echo "<li>" . $row_sub['s_categoria'] . "</li>";
+                                echo "<li><p class='linha' > " . $row_sub['s_categoria'] . "</p></li>";
                             }
                         echo "</ul>";
                     }

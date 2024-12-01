@@ -137,11 +137,15 @@ main{
 }
 .lista h1{
     border-bottom: solid 2px lightgray;
+    text-decoration: underline;
 }
-.lista ul {
-    margin-left: 50px;
-    margin-top: 10px;
+.lista ul{
+    list-style: none;
 }
+.linha{
+    font-size: larger;
+}
+
 /*formatação do <div> card-box abaixo*/
 .sidebar{
     width: 20%;

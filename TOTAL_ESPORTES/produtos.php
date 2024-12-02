@@ -58,7 +58,7 @@
                         echo "<ul>";
                             echo "<h1>" . $row['nome_categoria'] . "</h1>";
                             while ($row_sub = $result_sub->fetch_assoc()){
-                                echo "<li><p class='linha' > " . $row_sub['s_categoria'] . "</p></li>";
+                                echo "<a href='produtos.php?acao=" . $row_sub['s_categoria'] . "'><li><p class='linha'>" . $row_sub['s_categoria'] . "</p></li></a>";
                             }
                         echo "</ul>";
                     }
@@ -71,27 +71,56 @@
         <div class="card-box" >
         <?php
             include('Conexao/conexao.php');
+
             if ($conexao->connect_error) {
                 die("Conexão falhou: " . $conexao->connect_error);
             }
-            $sql_prod= "SELECT produto.imagem,produto.modelo,sub_categoria.s_categoria,produto.desc_breve,produto.preco FROM produto INNER JOIN sub_categoria ON produto.id_categoria = sub_categoria.id_sub_categoria;";
 
-            $result_prod = $conexao->query($sql_prod);
-
-            if($result_prod->num_rows > 0){
-                while($row_prod = $result_prod->fetch_assoc()){
-                    echo ("
-                        <div class='card' >
-                            <img src='{$row_prod['imagem']}'>
-                            <h3>{$row_prod['modelo']}</h3>
-                            <p>{$row_prod['s_categoria']}</p>
-                            <p>{$row_prod['desc_breve']}</p>
-                            <h3>{$row_prod['preco']}</h3>
-                        </div>
-                    ");
+            // testa se há parâmetros na url
+            if(isset($_GET['acao'])){
+                //caso haja parâmetros na url
+                                $sql_prod= "SELECT produto.imagem,produto.modelo,sub_categoria.s_categoria,produto.desc_breve,produto.preco FROM produto INNER JOIN sub_categoria ON produto.id_categoria = sub_categoria.id_sub_categoria WHERE sub_categoria.s_categoria ='" . $_GET['acao'] . "';";
+    
+                $result_prod = $conexao->query($sql_prod);
+    
+                if($result_prod->num_rows > 0){
+                    while($row_prod = $result_prod->fetch_assoc()){
+                        echo ("
+                            <div class='card' >
+                                <img src='{$row_prod['imagem']}'>
+                                <h3>{$row_prod['modelo']}</h3>
+                                <p>{$row_prod['s_categoria']}</p>
+                                <p>{$row_prod['desc_breve']}</p>
+                                <h3>{$row_prod['preco']}</h3>
+                            </div>
+                        ");
+                    }
+                }else{
+                    echo('nenhum produto encontrado');
                 }
-            }else{
-                echo('nenhum produto encontrado');
+            } 
+            else {
+                //caso não tenha parâmetros na url
+
+                $sql_prod= "SELECT produto.imagem,produto.modelo,sub_categoria.s_categoria,produto.desc_breve,produto.preco FROM produto INNER JOIN sub_categoria ON produto.id_categoria = sub_categoria.id_sub_categoria;";
+    
+                $result_prod = $conexao->query($sql_prod);
+    
+                if($result_prod->num_rows > 0){
+                    while($row_prod = $result_prod->fetch_assoc()){
+                        echo ("
+                            <div class='card' >
+                                <img src='{$row_prod['imagem']}'>
+                                <h3>{$row_prod['modelo']}</h3>
+                                <p>{$row_prod['s_categoria']}</p>
+                                <p>{$row_prod['desc_breve']}</p>
+                                <h3>{$row_prod['preco']}</h3>
+                            </div>
+                        ");
+                    }
+                }else{
+                    echo('nenhum produto encontrado');
+                }
             }
         ?>
             <div class="card" ><img src="img/placeholder.jpg" ><h3>nome do modelo</h3><p>categoria</p><p>descrição breve teste teste teste teste teste teste</p><h3>valor $000,00</h3></div>

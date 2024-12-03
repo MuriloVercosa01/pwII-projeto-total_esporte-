@@ -36,8 +36,8 @@
 
         <div class="adiconar" >
             <h2>adicionar</h2>
-            <button>Adicionar produto</button>
-            <button>Adiconar categoria/subcategoria</button>
+            <button href="addprodutos.html" >Adicionar produto</button>
+            <button href="" >Adiconar categoria/subcategoria</button>
         </div>
         <div class="painel" >
             <h1>gerenciamento de categorias,sub-categorias e produtos cadastrados</h1>

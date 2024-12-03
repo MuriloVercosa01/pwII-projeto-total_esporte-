@@ -90,10 +90,13 @@ header{
 main{
    width: 100%;
    margin-top: 20px;
-   background-color: #4CAF50;
+
 }
 main h1{
    font-size: 30px;
+   margin-left: 100px;
+}
+.adicionar{
    margin-left: 100px;
 }
 .painel{
@@ -108,6 +111,8 @@ main h1{
 }
 .painel h1{
    margin-left: 70px;
+   background-color: aliceblue;
+   padding: 10px;
 }
 table {
    width: 100%;

@@ -33,6 +33,12 @@
     </header>
     <main>
         <h1>Painel de gerenciamento</h1>
+
+        <div class="adiconar" >
+            <h2>adicionar</h2>
+            <button>Adicionar produto</button>
+            <button>Adiconar categoria/subcategoria</button>
+        </div>
         <div class="painel" >
             <h1>gerenciamento de categorias,sub-categorias e produtos cadastrados</h1>
             <div class="container-lista" > <!-- listagem de categorias -->

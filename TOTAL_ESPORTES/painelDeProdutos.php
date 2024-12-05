@@ -34,9 +34,9 @@
     <main>
         <h1>Painel de gerenciamento</h1>
 
-        <div class="adiconar" >
+        <div class="adicionar" >
             <h2>adicionar</h2>
-            <button href="addprodutos.html" >Adicionar produto</button>
+            <a href="addprodutos.html" ><button>Adicionar produto</button></a>
             <button href="" >Adiconar categoria/subcategoria</button>
         </div>
         <div class="painel" >
@@ -69,7 +69,7 @@
                             while($row = $result->fetch_assoc()){
                                 echo "<tr>";
 
-                                echo "<td>" . $row['id_categoria'] . "</td><td>" . $row['nome_categoria'] . "</td><td><button class='edit-btn'>Editar</button></td><td><button class='delete-btn'>Deletar</button></td>" ; 
+                                echo "<td>" . $row['id_categoria'] . "</td><td><p class='edit_text' >" . $row['nome_categoria'] . "</p></td><td><button class='edit-btn'>Editar</button></td><td><button class='delete-btn'>Deletar</button></td>" ; 
 
                                 echo "</tr>";
                             }
@@ -165,6 +165,7 @@
                 </table>
             </div>
         </div>
+        <script src="JS/Edit.js" ></script>
     </main>
 
 </body>

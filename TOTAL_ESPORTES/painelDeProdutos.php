@@ -86,8 +86,8 @@
                     <thead>
                         <tr>
                             <th>id</th>
-                            <th>categoria</th>
                             <th>sub-Categoria</th>
+                            <th>categoria</th>
                             <th>Editar</th>
                             <th>Deletar</th>
                         </tr>
@@ -108,9 +108,9 @@
                         if ($result->num_rows > 0){
                         //caso haja resultados
                             while($row = $result->fetch_assoc()){
-                                echo "<tr>";
+                                echo "<tr class='subcategoria'>";
 
-                                echo "<td>" . $row['id_sub_categoria'] . "</td><td>" . $row['nome_categoria'] . "</td><td>" . $row['s_categoria'] . "</td><td><button class='edit-btn'>Editar</button></td><td><button class='delete-btn'>Deletar</button></td>" ; 
+                                echo "<td>" . $row['id_sub_categoria'] . "</td><td><p class='edit_text' >" . $row['s_categoria'] . "</p></td><td>" . $row['nome_categoria'] . "</p></td><td><button class='edit-btn'>Editar</button></td><td><button class='delete-btn'>Deletar</button></td>" ; 
 
                                 echo "</tr>";
                             }

@@ -134,17 +134,19 @@ input {
    border: 1px solid #ccc;
 }
 
-button {
-   background-color: #4CAF50;
-   color: white;
-   padding: 10px 20px;
-   border: none;
-   border-radius: 5px;
-   width: 100%;
-   font-size: 1.2em;
-   cursor: pointer;
-}
-
-button:hover {
-   background-color: #45a049;
-}
+/* Classe CSS personalizada para o botão */
+.btn-salvar {
+   background-color: #4CAF50; /* Cor de fundo */
+   color: white;              /* Cor do texto */
+   padding: 10px 20px;        /* Espaçamento interno */
+   border: none;              /* Remover borda */
+   border-radius: 5px;        /* Bordas arredondadas */
+   cursor: pointer;          /* Cursor de mão ao passar o mouse */
+   font-size: 16px;           /* Tamanho da fonte */
+   transition: background-color 0.3s; /* Transição suave ao passar o mouse */
+ }
+ 
+ .btn-salvar:hover {
+   background-color: #45a049; /* Cor do fundo ao passar o mouse */
+ }
+ 

@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_subcategoria = isset($_POST['id_subcategoria']) ? $_POST['id_subcategoria'] : '';
 
     if($categoria === "" && $id_categoria === ""){
+        // edição caso seja subcategoria
         $sql = "UPDATE sub_categoria SET s_categoria = ? WHERE sub_categoria.id_sub_categoria = ?;";
 
         $result = $conexao->prepare($sql);
@@ -29,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         exit;
     }else{
+        // edição de categoria
         $sql = "UPDATE categoria SET nome_categoria = ? WHERE categoria.id_categoria = ?;";
 
         $result = $conexao->prepare($sql);

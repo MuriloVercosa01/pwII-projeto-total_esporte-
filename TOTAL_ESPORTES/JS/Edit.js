@@ -25,6 +25,7 @@
             td.replaceChild(novop, td.querySelector('input'));
 
             button.innerText = "Editar"
+            await(500);
             location.reload();
 
             const categoria = novop.innerText;

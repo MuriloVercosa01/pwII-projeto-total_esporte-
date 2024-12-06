@@ -25,18 +25,20 @@
             td.replaceChild(novop, td.querySelector('input'));
 
             button.innerText = "Editar"
-            await(500);
-            location.reload();
 
             const categoria = novop.innerText;
+            const id = tr.querySelector('td').innerText;
 
-            if(tr.classList.contains('subcategoria')){ //caso seja uma subcategoria
+            const requi = tr.classList.contains('subcategoria') //verifica se é categoria ou subcategoria
+                ? `subcategoria=${encodeURIComponent(categoria)}&id_subcategoria=${encodeURIComponent(id)}`
+                : `categoria=${encodeURIComponent(categoria)}&id_categoria=${encodeURIComponent(tr.querySelector('td').innerText)}`;
+
                 fetch('Conexao/salvarEdit.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     },
-                    body: `subcategoria=${encodeURIComponent(categoria)}&id_subcategoria=${encodeURIComponent(tr.querySelector('td').innerText)}`
+                    body: requi
                 })
                 .then(response => {
                     return response.text(); // Lê a resposta como texto
@@ -55,35 +57,9 @@
                         console.log("Resposta do servidor:", data);
                     }
                 })
-                .catch(error => console.error('Erro de rede:', error));                
+                .catch(error => console.error('Erro de rede:', error));                   
             }
-            //update na categoria
-            fetch('Conexao/salvarEdit.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: `categoria=${encodeURIComponent(categoria)}&id_categoria=${encodeURIComponent(tr.querySelector('td').innerText)}`
-            })
-            .then(response => {
-                return response.text(); // Lê a resposta como texto
-            })
-            .then(data => {
-                console.log(data); // Exibe a resposta para depuração
-                try {
-                    const parsedData = JSON.parse(data); // Tenta converter em JSON
-                    if (parsedData.success) {
-                        console.log("Texto salvo com sucesso!");
-                    } else {
-                        console.error("Erro ao salvar texto:", parsedData.message);
-                    }
-                } catch (error) {
-                    console.error("Erro ao parsear o JSON:", error);
-                    console.log("Resposta do servidor:", data);
-                }
-            })
-            .catch(error => console.error('Erro de rede:', error));
-        }
+            
          
     }
     document.querySelectorAll('.edit-btn').forEach(button => {

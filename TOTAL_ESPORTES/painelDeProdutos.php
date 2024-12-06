@@ -69,7 +69,7 @@
                             while($row = $result->fetch_assoc()){
                                 echo "<tr>";
 
-                                echo "<td>" . $row['id_categoria'] . "</td><td><p class='edit_text' >" . $row['nome_categoria'] . "</p></td><td><button class='edit-btn'>Editar</button></td><td><button class='delete-btn'>Deletar</button></td>" ; 
+                                echo "<td><p>" . $row['id_categoria'] . "</p></td><td><p class='edit_text' >" . $row['nome_categoria'] . "</p></td><td><button class='edit-btn'>Editar</button></td><td><button class='delete-btn'>Deletar</button></td>" ; 
 
                                 echo "</tr>";
                             }
@@ -110,7 +110,7 @@
                             while($row = $result->fetch_assoc()){
                                 echo "<tr class='subcategoria'>";
 
-                                echo "<td>" . $row['id_sub_categoria'] . "</td><td><p class='edit_text' >" . $row['s_categoria'] . "</p></td><td>" . $row['nome_categoria'] . "</p></td><td><button class='edit-btn'>Editar</button></td><td><button class='delete-btn'>Deletar</button></td>" ; 
+                                echo "<td><p>" . $row['id_sub_categoria'] . "</p></td><td><p class='edit_text' >" . $row['s_categoria'] . "</p></td><td>" . $row['nome_categoria'] . "</p></td><td><button class='edit-btn'>Editar</button></td><td><button class='delete-btn'>Deletar</button></td>" ; 
 
                                 echo "</tr>";
                             }
@@ -165,7 +165,8 @@
                 </table>
             </div>
         </div>
-        <script src="JS/Edit.js" ></script>
+        <script src="JS/Edit.js"></script>
+        <script src="JS/delete.js"></script>
     </main>
 
 </body>

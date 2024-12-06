@@ -10,29 +10,46 @@
 
 <body>
     <header>
-
         <div class="container">
-            <div class="logo"><img src="imagens/Logo.png"></div>
+            <div class="logo"><img src="imagens/Logo.png" alt="Logo"></div>
             <div class="menu">
                 <nav>
                     <a href="Home.html">Home</a>
                     <a href="produtos.php">Produtos</a>
                     <a href="#">Sobre</a>
-
                 </nav>
-    
-            </div> type='text'
+            </div>
             <div class="btn-menu">
-                
-                <button><i class="fa-solid fa-user-plus"></i> <Br> <a href="cadastro.php">  Cadastre-se  </a>  </button>
-                <button><i class="fa-solid fa-right-to-bracket"></i> <Br> <a href="login.php">  Entrar  </a>  </button>
-    
+                <button><i class="fa-solid fa-user-plus"></i><br><a href="cadastro.php">Cadastre-se</a></button>
+                <button><i class="fa-solid fa-right-to-bracket"></i><br><a href="login.php">Entrar</a></button>
             </div>
+        </div>
+    </header>
 
-           <body>
-            <div>
-                <h1>Perfil</h1>
-                <input type="text" placeholder="Nome">
-                <input type="password" placeholder="Senha">
-            </div>
-           </body>
+    <!-- Seção de perfil -->
+    <section class="perfil-section">
+        <div class="perfil-container">
+            <h2>Perfil</h2>
+            <form action="#" method="post">
+                <div class="input-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="input-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                </div>
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
+
+
+         

@@ -4,7 +4,7 @@ function deleteColum(button){
 
     const tr = button.closest('tr');
     const td = tr.querySelector("td:nth-child(1)");
-    const id = td.querySelector('p');
+    const id = td.querySelector('p').textContent.trim();
 
     const requi = tr.classList.contains('subcategoria') //verifica se é categoria ou subcategoria
             ? `id_subcategoria=${encodeURIComponent(id)}`
@@ -25,7 +25,10 @@ function deleteColum(button){
                 try {
                     const parsedData = JSON.parse(data); // Tenta converter em JSON
                     if (parsedData.success) {
-                        console.log("Texto salvo com sucesso!");
+                        console.log("Texto removido com sucesso!");
+                        tr.remove();  // Remove a linha da tabela
+                        window.location.href = window.location.href;
+                        
                     } else {
                         console.error("Erro ao salvar texto:", parsedData.message);
                     }
@@ -35,7 +38,6 @@ function deleteColum(button){
                 }
             })
             .catch(error => console.error('Erro de rede:', error));                   
-        
 
         
         
@@ -43,6 +45,6 @@ function deleteColum(button){
 }
 document.querySelectorAll('.delete-btn').forEach(button => {
     button.addEventListener('click',function(){
-        EditText(this);
+        deleteColum(this);
     })
 });

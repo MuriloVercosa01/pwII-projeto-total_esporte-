@@ -49,6 +49,7 @@
                         const parsedData = JSON.parse(data); // Tenta converter em JSON
                         if (parsedData.success) {
                             console.log("Texto salvo com sucesso!");
+                            location.reload();
                         } else {
                             console.error("Erro ao salvar texto:", parsedData.message);
                         }

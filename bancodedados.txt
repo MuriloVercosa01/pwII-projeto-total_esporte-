@@ -35,7 +35,7 @@ CREATE TABLE produto(
     preco double,
     tamanho int,
     imagem varchar(500),
-    desc_breve varchar(150),
+    desc_breve varchar(200),
     id_categoria int,
     id_subcategoria int,
     FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria),

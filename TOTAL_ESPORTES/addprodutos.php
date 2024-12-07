@@ -45,14 +45,32 @@
                 <input name="modelo" type='text' class="input" id="modelo" oninput="alterarPreview( 'modelo' , 'preview_modelo' )">
             </div>
             <div  class="form">
-                <label for="categoria">categoria do produto</label>
-                <!--<input name="categoria" type='text' class="input" >-->
+                <label for="categoria">categoria</label>
                 <select name="categoria"  class="input" id="categoria" oninput="alterarPreview( 'categoria' , 'preview_categoria' )">
-                    <option value="1">Society</option>
-                    <option value="2">Campo</option>
-                    <option value="3">Quadra</option>
+                  <?php
+                  include("conexao.php");
+                  $sql = "SELECT nome_categoria FROM `categoria`;";
+                  $result = $conexao->query($sql);
+                  
+                  if($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
+                      echo "<option>" . $row['nome_categoria'] . "</option>";
+                    }
+                  }else{
+                    echo "sem resultados";
+                  }
+                  ?>
                 </select>
             </div>
+            <div  class="form">
+              <label for="subcategoria">subcategoria</label>
+              <select name="categoria"  class="input" id="subcategoria" oninput="alterarPreview( 'categoria' , 'preview_categoria' )">
+                  <option value="1">subcategoria</option>
+                  <option value="1">subcategoria</option>
+                  <option value="1">subcategoria</option>
+
+              </select>
+          </div>
             <div  class="form">
                 <label for="desc_breve">breve descrição do produto</label>
                 <input name="desc_breve" type='text' class="input" id="desc" oninput="alterarPreview( 'desc' , 'preview_desc' )">

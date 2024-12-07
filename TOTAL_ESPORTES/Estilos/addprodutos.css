@@ -96,12 +96,12 @@ main{
 }
 form{
     width: 80%;
-    height: 80vh;
     background-color: rgba(0, 0, 0, 0.4);
     border: 1px solid black;
     border-radius: 15px;
     position: absolute;
-    top: 60%;
+    padding-bottom: 20px;
+    top: 70%;
     left: 50%;
     transform: translate(-50%,-50%);
 }

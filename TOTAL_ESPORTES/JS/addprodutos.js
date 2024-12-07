@@ -7,10 +7,11 @@ function alterarPreview( inputId , elementoId ){
         case "img":
             document.getElementById(elementoId).src = inputValor;
         break;
-        case "categoria":
-            if( inputValor == 1){ document.getElementById(elementoId).textContent = "Society";};
-            if( inputValor == 2){ document.getElementById(elementoId).textContent = "Campo";};
-            if( inputValor == 3){ document.getElementById(elementoId).textContent = "Quadra";};
+
+        case "subcategoria":
+            var selectElement = document.getElementById("subcategoria"); // Obtém o <select> pelo ID
+            var textoSelecionado = selectElement.options[selectElement.selectedIndex].text;
+            document.getElementById(elementoId).innerText = textoSelecionado;
         break;
         default:
             document.getElementById(elementoId).textContent = inputValor;        

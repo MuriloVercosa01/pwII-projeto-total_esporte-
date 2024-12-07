@@ -33,7 +33,7 @@
     </header>
 
     <main>
-        <form class="formulario" method="POST" action="Conexao/addprodutos.php">
+        <form class="formulario" method="POST" action="Conexao/cadastrarProdutos.php">
             <h1 id="titulo">Adicionar Produto</h1>
             <h2 id="subtitulo" >Preencha o formulário</h2>
             <div  class="form">
@@ -46,29 +46,44 @@
             </div>
             <div  class="form">
                 <label for="categoria">categoria</label>
-                <select name="categoria"  class="input" id="categoria" oninput="alterarPreview( 'categoria' , 'preview_categoria' )">
+                <select name="categoria"  class="input" id="categoria" oninput="alterarPreview( 'categoria' , 'preview_categoria' )" >
                   <?php
-                  include("conexao.php");
-                  $sql = "SELECT nome_categoria FROM `categoria`;";
-                  $result = $conexao->query($sql);
-                  
-                  if($result->num_rows > 0){
-                    while($row = $result->fetch_assoc()){
-                      echo "<option>" . $row['nome_categoria'] . "</option>";
+                    include("Conexao/conexao.php");
+
+                    $sql = "SELECT * FROM `categoria`;";
+
+                    $result = $conexao->query($sql);
+
+                    if ($result->num_rows > 0){
+                      while($row  = $result->fetch_assoc()){
+                        echo "<option value='" . $row['id_categoria'] .  "'>" . $row['nome_categoria'] . "</option>";
+                      }
+                    }else{
+                      echo "nenhuma categoria encontrada";
                     }
-                  }else{
-                    echo "sem resultados";
-                  }
+
                   ?>
                 </select>
             </div>
             <div  class="form">
               <label for="subcategoria">subcategoria</label>
-              <select name="categoria"  class="input" id="subcategoria" oninput="alterarPreview( 'categoria' , 'preview_categoria' )">
-                  <option value="1">subcategoria</option>
-                  <option value="1">subcategoria</option>
-                  <option value="1">subcategoria</option>
+              <select name="subcategoria"  class="input" id="subcategoria" oninput="alterarPreview( 'subcategoria' , 'preview_subcategoria' )" >
+              <?php
+                    include("Conexao/conexao.php");
 
+                    $sql = "SELECT categoria.nome_categoria, sub_categoria.s_categoria, id_sub_categoria  FROM sub_categoria JOIN categoria ON sub_categoria.id_categoria = categoria.id_categoria;";
+
+                    $result = $conexao->query($sql);
+
+                    if ($result->num_rows > 0){
+                      while($srow  = $result->fetch_assoc()){
+                        echo "<option value='" . $srow['id_sub_categoria'] . "'>" . $srow['nome_categoria'] . " - " . $srow['s_categoria'] . "</option>";
+                      }
+                    }else{
+                      echo "<option>" . $result->error . "nenhuma subcategoria encontrada</option>";
+                    }
+
+                  ?>
               </select>
           </div>
             <div  class="form">
@@ -87,7 +102,7 @@
         <div class="preview" >
             <img src="img/placeholder.jpg"  id="preview_img" >
             <h3 id="preview_modelo" >nome do modelo</h3>
-            <p id="preview_categoria" >categoria</p>
+            <p id="preview_subcategoria" >categoria - subcategoria</p>
             <p id="preview_desc" >descrição breve teste teste teste teste teste teste</p>
             <h3>valor $ <style> h3{display: inline-block;} </style><h3 id="preview_valor" >000,00</h3></h3>
         </div>

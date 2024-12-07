@@ -37,7 +37,9 @@ CREATE TABLE produto(
     imagem varchar(500),
     desc_breve varchar(150),
     id_categoria int,
-    FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
+    id_subcategoria int,
+    FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria),
+    FOREIGN KEY (id_subcategoria) REFERENCES sub_categoria(id_sub_categoria)
 );
 CREATE TABLE cart_itens(
     id_cart_itens int PRIMARY KEY AUTO_INCREMENT,

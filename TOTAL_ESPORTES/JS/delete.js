@@ -25,9 +25,8 @@ function deleteColum(button){
                 try {
                     const parsedData = JSON.parse(data); // Tenta converter em JSON
                     if (parsedData.success) {
-                        console.log("Texto removido com sucesso!");
+                        console.log("linha removida com sucesso!");
                         tr.remove();  // Remove a linha da tabela
-                        window.location.href = window.location.href;
                         
                     } else {
                         console.error("Erro ao salvar texto:", parsedData.message);

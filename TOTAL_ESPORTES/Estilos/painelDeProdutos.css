@@ -141,11 +141,21 @@ button {
    background-color: #4CAF50; /* Verde */
    color: white;
    border: none;
+   padding: 10px;
+}
+.edit-btn:hover{
+   background-color: #388E3C;
+   font-style: italic;
 }        
 .delete-btn {
    background-color: #f44336; /* Vermelho */
    color: white;
    border: none;
+   padding: 10px;
+}
+.delete-btn:hover{
+   background-color: #D32F2F;
+   font-style: italic;
 }
 footer {
    width: 100%;

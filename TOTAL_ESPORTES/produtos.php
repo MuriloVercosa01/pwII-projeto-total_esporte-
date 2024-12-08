@@ -100,9 +100,9 @@
                             <div class='card'>
                                 <img src='" . $row_prod['imagem'] . "'>
                                 <h3>" . $row_prod['modelo'] . "</h3>
-                                <p>" . $row_prod['s_categoria'] . "</p>
-                                <p>" . $row_prod['desc_breve'] . "</p>
-                                <h3>" . $row_prod['preco'] . "</h3>
+                                <p id='sub'>" . $row_prod['s_categoria'] . "</p>
+                                <p><strong>Descrição:</strong><br>" . $row_prod['desc_breve'] . "</p>
+                                <h3>R$ " . $row_prod['preco'] . "</h3>
                             </div>
                         </a>
                         ";
@@ -114,21 +114,23 @@
             else {
                 //caso não tenha parâmetros na url
 
-                $sql_prod= "SELECT produto.imagem,produto.modelo,sub_categoria.s_categoria,produto.desc_breve,produto.preco FROM produto INNER JOIN sub_categoria ON produto.id_categoria = sub_categoria.id_sub_categoria;";
+                $sql_prod= "SELECT produto.id_produto,produto.imagem,produto.modelo,sub_categoria.s_categoria,produto.desc_breve,produto.preco FROM produto INNER JOIN sub_categoria ON produto.id_categoria = sub_categoria.id_sub_categoria;";
     
                 $result_prod = $conexao->query($sql_prod);
     
                 if($result_prod->num_rows > 0){
                     while($row_prod = $result_prod->fetch_assoc()){
-                        echo ("
-                            <div class='card' >
-                                <img src='{$row_prod['imagem']}'>
-                                <h3>{$row_prod['modelo']}</h3>
-                                <p>{$row_prod['s_categoria']}</p>
-                                <p>{$row_prod['desc_breve']}</p>
-                                <h3>{$row_prod['preco']}</h3>
+                        echo "
+                        <a href='produtoSolo.php?id=" . $row_prod['id_produto'] . "'>
+                            <div class='card'>
+                                <img src='" . $row_prod['imagem'] . "'>
+                                <h3>" . $row_prod['modelo'] . "</h3>
+                                <p id='sub'>" . $row_prod['s_categoria'] . "</p>
+                                <p><strong>Descrição:</strong><br>" . $row_prod['desc_breve'] . "</p>
+                                <h3>R$ " . $row_prod['preco'] . "</h3>
                             </div>
-                        ");
+                        </a>
+                        ";
                     }
                 }else{
                     echo('nenhum produto encontrado');

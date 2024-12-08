@@ -33,23 +33,43 @@
     </header>
 
     <main>
-        <form class="formulario" method="POST" action="Conexao/cadastrarProdutos.php">
+        <form class="formulario" method="POST" action="Conexao/addCategoria.php">
             <h1 id="titulo">Adicionar categoria/subcategoria</h1>
             <h2 id="subtitulo" >Preencha o formulário</h2>
             <div  class="form">
-                <label for="tipo">categoria/subcategoria</label>
+                <label for="tipo"  id="tipo">categoria/subcategoria</label>
                 <form class="cat-sub" >
-                  <div  style="display: flex;" >
-                    <label>
-                      <input type="radio" name="opcao" value="opcao1"> Categoria
-                    </label>
-                    <label>
-                      <input type="radio" name="opcao" value="opcao2"> Subcategoria
-                    </label>
+                  <div  style="align-items: center; " >
+                    <label for="cate" >Categoria</label>
+                    <input id="cate" type="radio" name="tipo" value="1" checked> 
+                    <label  for="sub"> Subcategoria</label>
+                    <input id="sub" type="radio" name="tipo" value="2" >
                   </div>
 
-                  <button type="submit" >Adicionar</button>
+                  <label style="display: none;"  class="classeinput" for="escolha"   >nome da categoria pertencente</label>
+                  <select style="display: none;" class="classeinput" type="text" name="categoria" id="escolha" >
+                    <?php
+                    include('Conexao/conexao.php');
 
+                    $sql = 'SELECT * from categoria;';
+
+                    $result = $conexao->query($sql);
+
+                    if($result->num_rows > 0){
+                      while($row = $result->fetch_assoc()){
+                        echo "<option  value='". $row['id_categoria']  . "'>" . $row['nome_categoria'] . "</option>";
+                      }
+
+                    }else{
+                      echo "<option>nenhuma categoria encontrada</option>";
+                    }
+
+                    ?>
+                  </select>
+
+                  <label for="nome" >nome</label>
+                  <input id="nome" type="text" name="nome">
+                  <button style="margin-top:15px; margin-bottom: 10px; " type="submit" value="submit">Adicionar</button>
                 </form>
             </div>
 
@@ -112,7 +132,6 @@
           &#169; 2024 Total Esporte
         </div>
     </footer>
-
-    <script src="JS/addprodutos.js" ></script>
+    <script src="JS/addCategoria.js" ></script>
 </body>
 </html>

@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+  session_start();
+?>
 <html lang="pt-br">
 <head>
     <script src="https://kit.fontawesome.com/449a3898b7.js" crossorigin="anonymous"></script> <!--Código Font Awesome para os ícones do site-->
@@ -23,10 +25,10 @@
    
     <div class="menu">
         <nav> <!--Representa uma seção de navegação com links ou botões para direcionar para outra página do site-->
-            <a href="index.html">Home</a>
+            <a href="index.php">Home</a>
             <a href="produtos.php">Produtos</a>
-            <a href="#">Sobre</a>
-            <a href="#">Contatos</a>
+            <a href="#" style="visibility: hidden;" >Sobre</a>
+            <a href="#" style="visibility: hidden;">Contatos</a>
         </nav>
     </div>
 
@@ -41,11 +43,24 @@
       <button id="botao-perfil"><i class="fa-solid fa-user-circle"></i></button>
       <div id="menu-perfil" class="conteudo-perfil">
           <a href="compras.html">carrinho de compras</a>
-          <a href="painelDeProdutos.php">gerenciar</a>
+          <?php
+          if (isset($_SESSION['email']) && $_SESSION['email'] == "adm") {
+          echo "<a href='painelDeProdutos.php'>gerenciar</a>";
+          }
+          ?>
+          <!--<a href="painelDeProdutos.php">gerenciar</a>-->
           <a href="#">Conta</a>
-          <a href="Sair">Sair da Conta</a>
+          <a href="Conexao/logoff.php?logout=true" id="sair" >Sair</a>
       </div>
   </div>
+  <p style="color: white;" >
+    <?php
+      if(isset($_SESSION['nome_usuario'])){
+      //sessão iniciado
+      echo "olá," . $_SESSION['nome_usuario'];
+      }
+    ?>
+  </p>
 </div>
 
 </div>

@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,31 +9,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Estilos/cadastro.css">
+    <script src="JS/index.js" defer></script>
     <title>Cadastro</title>
 </head>
 <body>
-    <header>
-        <div class="container"> <!--delimitar a distancia do lado esquerdo e direito-->
-        <div class="logo"><img src="imagens/Logo.png"></div>  <!--Logo-->
-    
-       
-        <div class="menu">
-            <nav> <!--Representa uma seção de navegação com links ou botões para direcionar para outra página do site-->
-                <a href="index.html">Home</a>
-                <a href="produtos.php">Produtos</a>
-                <a href="#">Sobre</a>
-                <a href="#">Contatos</a>
-            </nav>
-        </div>
-    
-    
-        <div class="sessao">
-            <button><i class="fa-solid fa-right-to-bracket"></i><Br> <a href="login.html">  Entrar  </a></button>
-            <button><i class="fa-solid fa-user-plus"></i><Br> <a href="cadastro.html">  Cadastre-se  </a></button>
-            
-        </div>
+<header>
+    <div class="container"> <!--delimitar a distancia do lado esquerdo e direito-->
+    <div class="logo"><img src="imagens/Logo.png"></div>  <!--Logo-->
+
+   
+    <div class="menu">
+        <nav> <!--Representa uma seção de navegação com links ou botões para direcionar para outra página do site-->
+            <a href="index.php">Home</a>
+            <a href="produtos.php">Produtos</a>
+            <a href="#" style="visibility: hidden;" >Sobre</a>
+            <a href="#" style="visibility: hidden;">Contatos</a>
+        </nav>
     </div>
-    </header>
+
+
+    <div class="sessao">
+        <button><i class="fa-solid fa-right-to-bracket"></i><Br> <a href="login.php">  Entrar  </a></button>
+        <button><i class="fa-solid fa-user-plus"></i><Br> <a href="cadastro.php">  Cadastre-se  </a></button>
+        
+    </div>
+
+    <div class="perfil">
+      <button id="botao-perfil"><i class="fa-solid fa-user-circle"></i></button>
+      <div id="menu-perfil" class="conteudo-perfil">
+          <a href="compras.html">carrinho de compras</a>
+          <?php
+          if (isset($_SESSION['email']) && $_SESSION['email'] == "adm") {
+          echo "<a href='painelDeProdutos.php'>gerenciar</a>";
+          }
+          ?>
+          <!--<a href="painelDeProdutos.php">gerenciar</a>-->
+          <a href="#">Conta</a>
+          <a href="Conexao/logoff.php?logout=true" id="sair" >Sair</a>
+      </div>
+  </div>
+  <p style="color: white;" >
+    <?php
+      if(isset($_SESSION['nome_usuario'])){
+      //sessão iniciado
+      echo "olá," . $_SESSION['nome_usuario'];
+      }
+    ?>
+  </p>
+  </div>
+
+  </div>
+</header>
     <main>
         <form class="cadastro" action="Conexao/cadastro_conexao.php" method="POST" >
             <br>

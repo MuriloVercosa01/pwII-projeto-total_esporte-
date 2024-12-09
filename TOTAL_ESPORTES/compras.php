@@ -1,35 +1,64 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/449a3898b7.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>carrinho de compras</title>
     <link rel="stylesheet" href="Estilos/compras.css">
+    <script src="JS/index.js" defer></script>
+
 </head>
 <body>
 <header>
+    <div class="container"> <!--delimitar a distancia do lado esquerdo e direito-->
+    <div class="logo"><img src="imagens/Logo.png"></div>  <!--Logo-->
 
-<div class="container">
-    <div class="logo"><img src="imagens/Logo.png"></div>
+   
     <div class="menu">
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Produtos</a>
-            <a href="#">Sobre</a>
-            <a href="#">Contatos</a>
+        <nav> <!--Representa uma seção de navegação com links ou botões para direcionar para outra página do site-->
+            <a href="index.php">Home</a>
+            <a href="produtos.php">Produtos</a>
+            <a href="#" style="visibility: hidden;" >Sobre</a>
+            <a href="#" style="visibility: hidden;">Contatos</a>
         </nav>
-
     </div>
-    <div class="btn-menu">
+
+
+    <div class="sessao">
+        <button><i class="fa-solid fa-right-to-bracket"></i><Br> <a href="login.php">  Entrar  </a></button>
+        <button><i class="fa-solid fa-user-plus"></i><Br> <a href="cadastro.php">  Cadastre-se  </a></button>
         
-        <button><i class="fa-solid fa-user-plus"></i> <Br> <a href="cadastro.php">  Cadastre-se  </a>  </button>
-        <button><i class="fa-solid fa-right-to-bracket"></i> <Br> <a href="login.php">  Entrar  </a>  </button>
-
     </div>
-</div>
 
+    <div class="perfil">
+      <button id="botao-perfil"><i class="fa-solid fa-user-circle"></i></button>
+      <div id="menu-perfil" class="conteudo-perfil">
+          <a href="compras.html">carrinho de compras</a>
+          <?php
+          if (isset($_SESSION['email']) && $_SESSION['email'] == "adm") {
+          echo "<a href='painelDeProdutos.php'>gerenciar</a>";
+          }
+          ?>
+          <!--<a href="painelDeProdutos.php">gerenciar</a>-->
+          <a href="#">Conta</a>
+          <a href="Conexao/logoff.php?logout=true" id="sair" >Sair</a>
+      </div>
+  </div>
+  <p style="color: white;" >
+    <?php
+      if(isset($_SESSION['nome_usuario'])){
+      //sessão iniciado
+      echo "olá," . $_SESSION['nome_usuario'];
+      }
+    ?>
+  </p>
+  </div>
 
+  </div>
 </header>
 <main>
 <div class="container-main">

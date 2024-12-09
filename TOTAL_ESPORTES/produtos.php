@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,8 +11,10 @@
     <title>produtos</title>
     <link  rel="stylesheet" href="Estilos/produtos.css" >
     <script src="JS/index.js" defer></script>
+    
 </head>
 <body>
+
 <header>
     <div class="container"> <!--delimitar a distancia do lado esquerdo e direito-->
     <div class="logo"><img src="imagens/Logo.png"></div>  <!--Logo-->
@@ -16,31 +22,47 @@
    
     <div class="menu">
         <nav> <!--Representa uma seção de navegação com links ou botões para direcionar para outra página do site-->
-            <a href="index.html">Home</a>
+            <a href="index.php">Home</a>
             <a href="produtos.php">Produtos</a>
-            <a href="#">Sobre</a>
-            <a href="#">Contatos</a>
+            <a href="#" style="visibility: hidden;" >Sobre</a>
+            <a href="#" style="visibility: hidden;">Contatos</a>
         </nav>
     </div>
 
 
     <div class="sessao">
-        <button><i class="fa-solid fa-right-to-bracket"></i><Br> <a href="login.html">  Entrar  </a></button>
-        <button><i class="fa-solid fa-user-plus"></i><Br> <a href="cadastro.html">  Cadastre-se  </a></button>
+        <button><i class="fa-solid fa-right-to-bracket"></i><Br> <a href="login.php">  Entrar  </a></button>
+        <button><i class="fa-solid fa-user-plus"></i><Br> <a href="cadastro.php">  Cadastre-se  </a></button>
         
     </div>
 
     <div class="perfil">
       <button id="botao-perfil"><i class="fa-solid fa-user-circle"></i></button>
       <div id="menu-perfil" class="conteudo-perfil">
-          <a href="#">Configurações</a>
-          <a href="#">Sair da Conta</a>
+          <a href="compras.php">carrinho de compras</a>
+          <?php
+          if (isset($_SESSION['email']) && $_SESSION['email'] == "adm") {
+          echo "<a href='painelDeProdutos.php'>gerenciar</a>";
+          }
+          ?>
+          <!--<a href="painelDeProdutos.php">gerenciar</a>-->
+          <a href="#">Conta</a>
+          <a href="Conexao/logoff.php?logout=true" id="sair" >Sair</a>
       </div>
   </div>
-    </div>
+  <p style="color: white;" >
+    <?php
+      if(isset($_SESSION['nome_usuario'])){
+      //sessão iniciado
+      echo "olá," . $_SESSION['nome_usuario'];
+      }
+    ?>
+  </p>
+  </div>
 
-    </div>
+  </div>
 </header>
+
     <div class="nav-bar" >
         <div class="divMenuPesquisa" >
             <input type="text" id="pesquisa" placeholder="Buscar.." >
@@ -89,7 +111,7 @@
             // testa se há parâmetros na url
             if(isset($_GET['acao'])){
                 //caso haja parâmetros na url
-                                $sql_prod= "SELECT produto.id_produto, produto.imagem,produto.modelo,sub_categoria.s_categoria,produto.desc_breve,produto.preco FROM produto INNER JOIN sub_categoria ON produto.id_categoria = sub_categoria.id_sub_categoria WHERE sub_categoria.s_categoria ='" . $_GET['acao'] . "';";
+                                $sql_prod= "SELECT produto.id_produto, produto.imagem,produto.modelo,sub_categoria.s_categoria,produto.desc_breve,produto.preco FROM produto INNER JOIN sub_categoria ON produto.id_subcategoria = sub_categoria.id_sub_categoria WHERE sub_categoria.s_categoria ='" . $_GET['acao'] . "';";
     
                 $result_prod = $conexao->query($sql_prod);
     

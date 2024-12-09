@@ -34,15 +34,15 @@
 
 
     <div class="sessao">
-        <button><i class="fa-solid fa-right-to-bracket"></i><Br> <a href="login.html">  Entrar  </a></button>
-        <button><i class="fa-solid fa-user-plus"></i><Br> <a href="cadastro.html">  Cadastre-se  </a></button>
+        <button><i class="fa-solid fa-right-to-bracket"></i><Br> <a href="login.php">  Entrar  </a></button>
+        <button><i class="fa-solid fa-user-plus"></i><Br> <a href="cadastro.php">  Cadastre-se  </a></button>
         
     </div>
 
     <div class="perfil">
       <button id="botao-perfil"><i class="fa-solid fa-user-circle"></i></button>
       <div id="menu-perfil" class="conteudo-perfil">
-          <a href="compras.html">carrinho de compras</a>
+          <a href="compras.php">carrinho de compras</a>
           <?php
           if (isset($_SESSION['email']) && $_SESSION['email'] == "adm") {
           echo "<a href='painelDeProdutos.php'>gerenciar</a>";
@@ -61,9 +61,9 @@
       }
     ?>
   </p>
-</div>
+  </div>
 
-</div>
+  </div>
 </header>
 <!--Fim Cabeçalho-->
 
@@ -123,37 +123,54 @@
 
 <section class="carrosel-rolagem">
     <div class="conteiner-rolagem">
+
       <div class="item">
+        <a href="" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1023317_vapor.jpg">
         <p>Nike Mercurial Vapor</p>
+        </a>
       </div>
+
       <div class="item">
+        <a href="" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1019309_puma-future.jpg" >
         <p>Puma Future</p>
+        </a>
       </div>
       <div class="item">
+      <a href="" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1023345_phantom-luna.jpg">
         <p>Nike Phantom GX</p>
+        </a>
       </div>
       <div class="item">
+      <a href="" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1018849_f50-120924.jpg">
         <p>Adidas F50</p>
+        </a>
       </div>
       <div class="item">
+      <a href="" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1023352_tiempo.jpg">
         <p>Nike Tiempo Legend</p>
       </div>
       <div class="item">
+      <a href="" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1018874_copa.jpg">
         <p>Adidas Copa Pure</p>
+        </a>
       </div>
       <div class="item">
+      <a href="" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1018813_pred-120924.jpg">
         <p>Adidas Predator</p>
+        </a>
       </div>
       <div class="item">
+      <a href="" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1019327_puma-king.jpg">
         <p>Puma King</p>
+        </a>
       </div>
     </div>
   </section>

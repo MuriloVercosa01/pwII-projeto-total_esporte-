@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11/12/2024 às 20:03
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Tempo de geração: 12-Dez-2024 às 00:16
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cadastros`
+-- Estrutura da tabela `cadastros`
 --
 
 CREATE TABLE `cadastros` (
@@ -37,7 +37,7 @@ CREATE TABLE `cadastros` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cart`
+-- Estrutura da tabela `cart`
 --
 
 CREATE TABLE `cart` (
@@ -49,7 +49,7 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cart_itens`
+-- Estrutura da tabela `cart_itens`
 --
 
 CREATE TABLE `cart_itens` (
@@ -63,7 +63,7 @@ CREATE TABLE `cart_itens` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `categoria`
+-- Estrutura da tabela `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -72,16 +72,16 @@ CREATE TABLE `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `categoria`
+-- Extraindo dados da tabela `categoria`
 --
 
 INSERT INTO `categoria` (`id_categoria`, `nome_categoria`) VALUES
-(1, 'chuteiras');
+(1, 'chuteira');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `produto`
+-- Estrutura da tabela `produto`
 --
 
 CREATE TABLE `produto` (
@@ -96,7 +96,7 @@ CREATE TABLE `produto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `produto`
+-- Extraindo dados da tabela `produto`
 --
 
 INSERT INTO `produto` (`id_produto`, `modelo`, `preco`, `tamanho`, `imagem`, `desc_breve`, `id_categoria`, `id_subcategoria`) VALUES
@@ -111,12 +111,14 @@ INSERT INTO `produto` (`id_produto`, `modelo`, `preco`, `tamanho`, `imagem`, `de
 (10, 'Nike Mercurial Superfly', 299.99, NULL, 'https://imgnike-a.akamaihd.net/360x360/0226060UA9.jpg', 'Incline instantaneamente o campo no design da Superfly 9 Club MG leve e baixa. A velocidade está no Air.', 1, 2),
 (11, 'Adidas Predator Edge+', 649.99, NULL, 'https://acdn.mitiendanube.com/stores/001/047/204/products/006050e2-7374-487f-9618-2602fca8e4191-8a33bd221a5929007516748214399312-1024-1024.jpeg', 'Domínio. Controle. Forca. A adidas Predator tem tudo para emplacar', 1, 1),
 (12, 'Adidas Predator League In', 329.99, NULL, 'https://www.tradeinn.com/f/14055/140552258/adidas-tenis-de-futsal-predator-league-in.webp', 'Mire na perfeição com a nova adidas Predator. uma entressola Lightstrike leve e uma sola de perfil baixo garantem que você esteja sempre pronto para reagir.', 1, 2),
-(13, 'Nike Beco 2', 199.99, NULL, 'https://imgcentauro-a.akamaihd.net/768x768/8295512V.jpg', 'Feita com linhas clean e um visual clássico, a Nike Beco 2 TF permite que a sua jogada fale por si só. ', 1, 2);
+(13, 'Nike Beco 2', 199.99, NULL, 'https://imgcentauro-a.akamaihd.net/768x768/8295512V.jpg', 'Feita com linhas clean e um visual clássico, a Nike Beco 2 TF permite que a sua jogada fale por si só. ', 1, 2),
+(14, 'Cleats Skechers', 600, NULL, 'https://gfx.r-gol.com/media/res/products/520/197520/795x1035/252022-pur_1.webp', 'Impulsione seu jogo com os sapatos Skechers SKX_01 - 1.5 HIGH ELITE FG™. Chuteiras leves com amortecimento HYPER BURST PRO™ altamente ', 1, 1),
+(15, 'Predator League Bellingham', 600, NULL, 'https://gfx.r-gol.com/media/res/products/918/190918/795x1035/jh5702_6.webp', 'Categorias: Chuteiras , Finalidade , Produtor , Série , Avançado , Chuteiras de jogadores , Chuteiras - Chuteiras de chão firme (FG). ', 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sub_categoria`
+-- Estrutura da tabela `sub_categoria`
 --
 
 CREATE TABLE `sub_categoria` (
@@ -126,34 +128,33 @@ CREATE TABLE `sub_categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `sub_categoria`
+-- Extraindo dados da tabela `sub_categoria`
 --
 
 INSERT INTO `sub_categoria` (`id_sub_categoria`, `s_categoria`, `id_categoria`) VALUES
 (1, 'campo', 1),
 (2, 'futsal', 1),
-(3, 'society', 1),
-(4, 'colecionaveis', 1);
+(3, 'society', 1);
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `cadastros`
+-- Índices para tabela `cadastros`
 --
 ALTER TABLE `cadastros`
   ADD PRIMARY KEY (`id_cliente`);
 
 --
--- Índices de tabela `cart`
+-- Índices para tabela `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id_cart`),
   ADD KEY `id_cliente` (`id_cliente`);
 
 --
--- Índices de tabela `cart_itens`
+-- Índices para tabela `cart_itens`
 --
 ALTER TABLE `cart_itens`
   ADD PRIMARY KEY (`id_cart_itens`),
@@ -162,13 +163,13 @@ ALTER TABLE `cart_itens`
   ADD KEY `id_produto` (`id_produto`);
 
 --
--- Índices de tabela `categoria`
+-- Índices para tabela `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
--- Índices de tabela `produto`
+-- Índices para tabela `produto`
 --
 ALTER TABLE `produto`
   ADD PRIMARY KEY (`id_produto`),
@@ -176,14 +177,14 @@ ALTER TABLE `produto`
   ADD KEY `id_subcategoria` (`id_subcategoria`);
 
 --
--- Índices de tabela `sub_categoria`
+-- Índices para tabela `sub_categoria`
 --
 ALTER TABLE `sub_categoria`
   ADD PRIMARY KEY (`id_sub_categoria`),
   ADD KEY `id_categoria` (`id_categoria`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
@@ -214,7 +215,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `sub_categoria`
@@ -223,17 +224,17 @@ ALTER TABLE `sub_categoria`
   MODIFY `id_sub_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `cart`
+-- Limitadores para a tabela `cart`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cadastros` (`id_cliente`);
 
 --
--- Restrições para tabelas `cart_itens`
+-- Limitadores para a tabela `cart_itens`
 --
 ALTER TABLE `cart_itens`
   ADD CONSTRAINT `cart_itens_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cadastros` (`id_cliente`),
@@ -241,14 +242,14 @@ ALTER TABLE `cart_itens`
   ADD CONSTRAINT `cart_itens_ibfk_3` FOREIGN KEY (`id_produto`) REFERENCES `produto` (`id_produto`);
 
 --
--- Restrições para tabelas `produto`
+-- Limitadores para a tabela `produto`
 --
 ALTER TABLE `produto`
   ADD CONSTRAINT `produto_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`),
   ADD CONSTRAINT `produto_ibfk_2` FOREIGN KEY (`id_subcategoria`) REFERENCES `sub_categoria` (`id_sub_categoria`);
 
 --
--- Restrições para tabelas `sub_categoria`
+-- Limitadores para a tabela `sub_categoria`
 --
 ALTER TABLE `sub_categoria`
   ADD CONSTRAINT `sub_categoria_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`);

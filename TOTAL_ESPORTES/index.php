@@ -80,18 +80,18 @@
         <input type="radio" name="btn-radio" id="radio3">
 
         <div class="slide-box primeiro">
-            <a class="img-desktop" href="#"><img  src="imagens/MabappeWEB.jpg" alt="slide1"></a>
-            <a class="img-mobile" href="#"><img src="imagens/MbappeMOB.jpg" alt="slide1"></a>
+            <a class="img-desktop" href="produtos.php"><img  src="imagens/MabappeWEB.jpg" alt="slide1"></a>
+            <a class="img-mobile" href="produtos.php"><img src="imagens/MbappeMOB.jpg" alt="slide1"></a>
         </div>
 
         <div class="slide-box">
-            <a class="img-desktop" href="#"><img  src="imagens/NeymarWEB.png" alt="slide2"></a>
-            <a class="img-mobile" href="#"><img src="imagens/NeymarMOB.jpg" alt="slide2"></a>
+            <a class="img-desktop" href="produtos.php"><img  src="imagens/NeymarWEB.png" alt="slide2"></a>
+            <a class="img-mobile" href="produtos.php"><img src="imagens/NeymarMOB.jpg" alt="slide2"></a>
         </div>
 
         <div class="slide-box">
-            <a class="img-desktop" href="#"><img  src="imagens/PumaWEB.jpg" alt="slide3"></a>
-            <a class="img-mobile" href="#"><img src="imagens/PumaMOB.jpg" alt="slide3"></a>
+            <a class="img-desktop" href="produtos.php"><img  src="imagens/PumaWEB.jpg" alt="slide3"></a>
+            <a class="img-mobile" href="produtos.php"><img src="imagens/PumaMOB.jpg" alt="slide3"></a>
         </div>
 
         <div class="nav-auto">
@@ -183,8 +183,8 @@
 <div class="tabela-produtos">
     <table>
 
-        <td>  <a href="#"> <img src="https://gfx.r-gol.com/media/pub/ListopadBanery24/belligolddwabanerydesktopEN-kopia.webp"> </a> </td>
-        <td> <a href="#"><img src="https://gfx.r-gol.com/media/pub/ListopadBanery24/dwabaneryskechersdesktopEN-kopia.webp"></a></td>
+        <td>  <a href="produtoSolo.php?id=15"> <img src="https://gfx.r-gol.com/media/pub/ListopadBanery24/belligolddwabanerydesktopEN-kopia.webp"> </a> </td>
+        <td> <a href="produtoSolo.php?id=14"><img src="https://gfx.r-gol.com/media/pub/ListopadBanery24/dwabaneryskechersdesktopEN-kopia.webp"></a></td>
    
 
     </table>

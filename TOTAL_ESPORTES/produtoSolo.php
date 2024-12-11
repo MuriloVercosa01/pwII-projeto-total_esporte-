@@ -37,7 +37,7 @@ $conexao->close();
         <div class="logo"><img src="imagens/Logo.png"></div>
         <div class="menu">
             <nav>
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
                 <a href="produtos.php">Produtos</a>
                 <a href="#" style="visibility: hidden;" >Sobre</a>
                 <a href="#" style="visibility: hidden;"  >Contatos</a>

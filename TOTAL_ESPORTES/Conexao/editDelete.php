@@ -82,30 +82,46 @@ if ($id_categoria !== null) {
 elseif ($id_subcategoria !== null) {
     // Deleta da tabela sub_categoria
     
-    $stmt = $conexao->prepare("DELETE FROM sub_categoria WHERE id_sub_categoria = ? ;");
-    $stmt->bind_param("i", $id_subcategoria);
-    $stmt->execute();
-    
-    if ($stmt->affected_rows > 0) {
-        echo json_encode(["success" => true, "message" => "Subcategoria deletada com sucesso"]);
-    } else {
-        echo json_encode(["success" => false, "message" => "Nenhuma subcategoria encontrada"]);
-    }
-    $stmt2 = $conexao->prepare("DELETE FROM produto WHERE id_subcategoria = ?");
-    $stmt2->bind_param("i", $id_subcategoria);
-    $stmt2->execute();
 
-    if ($stmt2->affected_rows > 0) {
-        echo json_encode(["success" => true, "message" => "Subcategoria e produtos relacionados deletados com sucesso"]);
-    } else {
-        echo json_encode(["success" => false, "message" => "Nenhum produto relacionado a subcategoria encontrado"]);
-    }
+    $conexao->begin_transaction();
 
-    // Feche o statement
-    $stmt->close();
-    $stmt2->close();
+    try {
+        // Deleta a subcategoria
+        $stmt = $conexao->prepare("DELETE FROM produto WHERE id_subcategoria = ?");
+        $stmt->bind_param("i", $id_subcategoria);
+        $stmt->execute();
+
+        // Verifica se a subcategoria foi deletada
+        if ($stmt->affected_rows > 0) {
+            echo json_encode(["success" => true, "message" => "Subcategoria deletada com sucesso"]);
+        } else {
+            echo json_encode(["success" => false, "message" => "Nenhuma subcategoria encontrada"]);
+        }
+
+        // Deleta os produtos relacionados à subcategoria
+        $stmt2 = $conexao->prepare("DELETE FROM sub_categoria WHERE id_sub_categoria = ?;");
+        $stmt2->bind_param("i", $id_subcategoria);
+        $stmt2->execute();
+
+        if ($stmt2->affected_rows > 0) {
+            echo json_encode(["success" => true, "message" => "Produtos relacionados à subcategoria deletados com sucesso"]);
+        } else {
+            echo json_encode(["success" => false, "message" => "Nenhum produto relacionado à subcategoria encontrado"]);
+        }
+
+        // Se ambas as operações foram bem-sucedidas, faz o commit da transação
+        $conexao->commit();
+
+        // Fechar statements
+        $stmt->close();
+        $stmt2->close();
+    } catch (Exception $e) {
+        // Se ocorrer um erro, faz o rollback da transação
+        $conexao->rollback();
+        echo json_encode(["success" => false, "message" => "Erro ao deletar dados: " . $e->getMessage()]);
+    }
 } else {
-    // Caso nenhum parâmetro seja passado
     echo json_encode(["success" => false, "message" => "Parâmetro inválido"]);
 }
+
 ?>

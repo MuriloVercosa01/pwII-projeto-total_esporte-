@@ -243,12 +243,20 @@ main{
 }
 #pesquisa::placeholder{
     color: white;
+    width: 40%;
 }
 /* FORMATAÇÃO SECTION DA CLASSE DESTAQUES */
+section div{
+  background-color: white;
+  margin-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+}
 .destaque{
+    width:fit-content;
     margin-top: 15px;
+    padding-left: 25px;
     margin-bottom: 10px;
-    background-color: #f1f1f1;
+    display: inline-block;
     text-align: center;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 40px;

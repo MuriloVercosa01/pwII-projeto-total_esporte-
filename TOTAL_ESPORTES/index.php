@@ -125,49 +125,49 @@
     <div class="conteiner-rolagem">
 
       <div class="item">
-        <a href="" >
+        <a href="produtoSolo.php?id=2" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1023317_vapor.jpg">
         <p>Nike Mercurial Vapor</p>
         </a>
       </div>
 
       <div class="item">
-        <a href="" >
+        <a href="produtoSolo.php?id=3" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1019309_puma-future.jpg" >
         <p>Puma Future</p>
         </a>
       </div>
       <div class="item">
-      <a href="" >
+      <a href="produtoSolo.php?id=4" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1023345_phantom-luna.jpg">
         <p>Nike Phantom GX</p>
         </a>
       </div>
       <div class="item">
-      <a href="" >
+      <a href="produtoSolo.php?id=5" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1018849_f50-120924.jpg">
         <p>Adidas F50</p>
         </a>
       </div>
       <div class="item">
-      <a href="" >
+      <a href="produtoSolo.php?id=6" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1023352_tiempo.jpg">
         <p>Nike Tiempo Legend</p>
       </div>
       <div class="item">
-      <a href="" >
+      <a href="produtoSolo.php?id=7" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1018874_copa.jpg">
         <p>Adidas Copa Pure</p>
         </a>
       </div>
       <div class="item">
-      <a href="" >
+      <a href="produtoSolo.php?id=8" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1018813_pred-120924.jpg">
         <p>Adidas Predator</p>
         </a>
       </div>
       <div class="item">
-      <a href="" >
+      <a href="produtoSolo.php?id=9" >
         <img src="https://www.prodirectsport.com/-/media/prodirect/project/en/soccer/tabs---new/standard/boots/silos/1019327_puma-king.jpg">
         <p>Puma King</p>
         </a>

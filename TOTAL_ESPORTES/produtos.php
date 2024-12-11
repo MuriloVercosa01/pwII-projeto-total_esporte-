@@ -69,7 +69,7 @@
             <img src="https://cdn-icons-png.flaticon.com/512/3183/3183361.png" >
         </div>
     </div>
-    <section><h1 class="destaque" >Produtos em destaque</h1></section>
+    <section><div><h1 class="destaque" >Produtos em destaque</h1></div></section>
     <main>
         <div class="sidebar" >
             <div class="lista" >

@@ -39,8 +39,8 @@ $conexao->close();
             <nav>
                 <a href="index.html">Home</a>
                 <a href="produtos.php">Produtos</a>
-                <a href="#">Sobre</a>
-                <a href="#">Contatos</a>
+                <a href="#" style="visibility: hidden;" >Sobre</a>
+                <a href="#" style="visibility: hidden;"  >Contatos</a>
             </nav>
         </div>
         <div class="sessao">
@@ -68,7 +68,7 @@ $conexao->close();
             <h1><?php echo $produto['modelo']; ?></h1>
             <p><?php echo $produto['desc_breve']; ?></p>
             <h4>Preço: R$ <?php echo $produto['preco']; ?></h4>
-            <form action="adicionarAoCarrinho.php" method="post">
+            <form action="compras.php" method="post">
                 <label for="tamanho">Tamanho:</label>
                 <select name="tamanho" id="tamanho" required>
                     <option value="">Selecione o tamanho</option>
